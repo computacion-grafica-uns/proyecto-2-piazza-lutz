@@ -172,7 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (4)
+      value: tetera04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -229,7 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (6)
+      value: tetera06
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -286,7 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (7)
+      value: tetera07
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -306,8 +318,8 @@ GameObject:
   - component: {fileID: 426116628}
   - component: {fileID: 426116627}
   m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
+  m_Name: 0Plane
+  m_TagString: FocusTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (18)
+      value: tetera18
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -506,7 +522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (1)
+      value: tetera01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -563,7 +583,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (9)
+      value: tetera09
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -620,7 +644,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (10)
+      value: tetera10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -677,7 +705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (3)
+      value: tetera03
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -734,7 +766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (2)
+      value: tetera02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -885,7 +921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (20)
+      value: tetera20
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -942,7 +982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (15)
+      value: tetera15
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -999,7 +1043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (8)
+      value: tetera08
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1056,7 +1104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model
+      value: tetera00
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1113,7 +1165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (16)
+      value: tetera16
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1170,7 +1226,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (17)
+      value: tetera17
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1227,7 +1287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (19)
+      value: tetera19
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1284,7 +1348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (12)
+      value: tetera12
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1341,7 +1409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (13)
+      value: tetera13
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1398,7 +1470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (5)
+      value: tetera05
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1416,6 +1492,7 @@ GameObject:
   - component: {fileID: 1957439111}
   - component: {fileID: 1957439110}
   - component: {fileID: 1957439109}
+  - component: {fileID: 1957439112}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1497,6 +1574,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 34.6, y: -41, z: 0}
+--- !u!114 &1957439112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957439108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737b2fd1e4f11864db6263e121800b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  distance: 50
+  rotationSpeed: 65
+  zoomSpeed: 100
+  minDistance: 50
+  maxDistance: 500
 --- !u!1001 &1997869857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1547,7 +1642,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (11)
+      value: tetera11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1604,7 +1703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
-      value: base_model (14)
+      value: tetera14
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
