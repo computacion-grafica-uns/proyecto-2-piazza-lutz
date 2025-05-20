@@ -3,24 +3,25 @@ Shader "Custom/Lighting/PerFragment/Blinn-Phong"
 	Properties
 	{
 		_MainTex ("Main Texture", 2D) = "white" {}
+		_Color ("Color", color) = (0.6, 0.3, 0.1, 1) 
 
 		[Header(Ambient)]
-		_Ambient ("Intensity", Range(0., 1.)) = 0.1
-		_AmbColor ("Color", color) = (1., 1., 1., 1.)
+		_Ambient ("Intensity", Range(0.1, 0.2)) = 0.1
+		_AmbColor ("Color", color) = (1, 1, 1, 1)
 
 		[Header(Diffuse)]
-		_Diffuse ("Val", Range(0., 1.)) = 1.
-		_DifColor ("Color", color) = (1., 1., 1., 1.)
+		_Diffuse ("Val", Range(0.9, 1.)) = 1.
+		_DifColor ("Color", color) = (0.6, 0.3, 0.1, 1)
 
 		[Header(Specular)]
 		[Toggle] _Spec("Enabled?", Float) = 0.
 		_Shininess ("Shininess", Range(0.1, 100)) = 1.
-		_SpecColor ("Specular color", color) = (1., 1., 1., 1.)
+		_SpecColor ("Specular color", color) = (0, 0, 0, 1.)
 
 		[Header(Emission)]
 		_EmissionTex ("Emission texture", 2D) = "gray" {}
 		_EmiVal ("Intensity", float) = 0.
-		[HDR]_EmiColor ("Color", color) = (1., 1., 1., 1.)
+		[HDR]_EmiColor ("Color", color) = (0, 0, 0, 1.)
 	}
 
 	SubShader
