@@ -45,7 +45,7 @@ public class SceneAManager : MonoBehaviour
         // Cambiar de objetivo al presionar tecla
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 currentTargetIndex = (currentTargetIndex - 1) % targets.Length;
             }
