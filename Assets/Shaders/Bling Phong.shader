@@ -3,15 +3,15 @@ Shader "Custom/Lighting/PerFragment/Blinn-Phong"
 	Properties
 	{
 		_MainTex ("Main Texture", 2D) = "white" {}
-		_Color ("Color", color) = (0.6, 0.3, 0.1, 1) 
+		_Color ("Color", color) = (0.722, 0.451, 0.200, 1) 
 
 		[Header(Ambient)]
-		_Ambient ("Intensity", Range(0.1, 0.2)) = 0.1
+		_Ambient ("Intensity", Range(0.05, 0.1)) = 0.1
 		_AmbColor ("Color", color) = (1, 1, 1, 1)
 
 		[Header(Diffuse)]
-		_Diffuse ("Val", Range(0.9, 1.)) = 1.
-		_DifColor ("Color", color) = (0.6, 0.3, 0.1, 1)
+		_Diffuse ("Val", Range(0.1, 0.4)) = 1.
+		_DifColor ("Color", color) = (0.722, 0.451, 0.200, 1)
 
 		[Header(Specular)]
 		[Toggle] _Spec("Enabled?", Float) = 0.
