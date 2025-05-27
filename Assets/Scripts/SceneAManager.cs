@@ -7,15 +7,15 @@ using System.Linq;
 public class SceneAManager : MonoBehaviour
 {
     public Transform[] targets;         // Objetivos: plano y teteras
-    public float distance = 50f;        // Distancia de la cámara al objetivo
-    public float rotationSpeed = 65f;   // Velocidad de rotación orbital
+    public float distance = 100f;        // Distancia de la cï¿½mara al objetivo
+    public float rotationSpeed = 65f;   // Velocidad de rotaciï¿½n orbital
 
-    private int currentTargetIndex = 0; // Índice del objetivo actual
+    private int currentTargetIndex = 0; // ï¿½ndice del objetivo actual
     private float currentAngle = 0f;
 
-    public float zoomSpeed = 100f;       // Qué tan rápido hace zoom
-    public float minDistance = 50f;     // Distancia mínima
-    public float maxDistance = 500f;   // Distancia máxima
+    public float zoomSpeed = 100f;       // Quï¿½ tan rï¿½pido hace zoom
+    public float minDistance = 50f;     // Distancia mï¿½nima
+    public float maxDistance = 500f;   // Distancia mï¿½xima
 
 
     void Start()
