@@ -1,4 +1,4 @@
-Shader "Custom/CookTorranceLuces"
+Shader "Custom/Cook-Torrance"
 {
     Properties
     {
@@ -19,14 +19,14 @@ Shader "Custom/CookTorranceLuces"
         // Luz ambiental
         _AmbientLight("AmbientLight", Color) = (0,0,0,1)
 
-        // Parámetros PBR
+        // Par�metros PBR
         _BaseColor("Base Color", Color) = (1,0,0,1)
         _Metallic("Metallic", Range(0,1)) = 0.0
         _Roughness("Roughness", Range(0.05,1)) = 0.3
     }
-    SubShader
+        SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType" = "Opaque" }
         LOD 100
 
         Pass
@@ -97,10 +97,10 @@ Shader "Custom/CookTorranceLuces"
                 float D = DistributionGGX(N, H, roughness);
                 float G = GeometrySmith(N, V, L, roughness);
                 float3 F = FresnelSchlick(max(dot(H, V), 0.0), F0);
-                return (D * G * F) / (4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.001);
+                return (G * D * F) / (4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.001);
             }
 
-            float3 computeLight(float3 N, float3 V, float3 L, float3 lightColor) {
+            float3 computeLight(float3 N, float3 V, float3 L, float3 lightColor, float3 colorTextura) {
                 float3 F0 = lerp(0.04, _BaseColor.rgb, _Metallic);
                 float3 H = normalize(V + L);
                 float3 F = FresnelSchlick(max(dot(H, V), 0.0), F0);
@@ -111,7 +111,7 @@ Shader "Custom/CookTorranceLuces"
                 float3 diffuse = kD * _BaseColor.rgb / UNITY_PI;
                 float3 specular = CookTorranceSpecular(N, V, L, _Roughness, F0);
 
-                return (diffuse + specular) * lightColor * NdotL;
+                return (diffuse * colorTextura + specular) * lightColor * NdotL;
             }
 
             fixed4 fragmentShader(v2f f) : SV_Target {
@@ -121,15 +121,15 @@ Shader "Custom/CookTorranceLuces"
                 float3 color = _AmbientLight.rgb * _BaseColor.rgb;
 
                 float3 Lp = normalize(_PuntualLightPosition_w.xyz - f.position_w.xyz);
-                color += computeLight(N, V, Lp, _PuntualLightIntensity.rgb);
+                color += computeLight(N, V, Lp, _PuntualLightIntensity.rgb, colorTextura1.rgb);
 
                 float3 Ld = normalize(-_DirectionalLightDirection_w.xyz);
-                color += 0.75 * computeLight(N, V, Ld, _DirectionalLightIntensity.rgb);
+                color += computeLight(N, V, Ld, _DirectionalLightIntensity.rgb, colorTextura1.rgb);
 
                 float3 Ls = normalize(_SpotLightPosition_w.xyz - f.position_w.xyz);
                 float3 spotDir = normalize(-_SpotLightDirection_w.xyz);
                 float att = dot(Ls, spotDir) > 1 - _CircleRadius ? 1 : 0;
-                color += computeLight(N, V, Ls, _SpotLightIntensity.rgb) * att;
+                color += computeLight(N, V, Ls, _SpotLightIntensity.rgb, colorTextura1.rgb) * att;
 
                 return fixed4(color, 1.0);
             }

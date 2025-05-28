@@ -179,8 +179,8 @@ Shader "Custom/BlingPhong Luces"
            {
                fixed4 fragColor = 0;
                fixed4 colorTextura1 = tex2D(_Maintex, f.uv);
-               fragColor.rgb = ambientLight() + diffuseSpotLight(f) + specularSpotLight(f);
-               //fragColor.rgb = ambientLight() + diffuseSpotLight(f) * colorTextura1 + specularSpotLight(f);
+               //fragColor.rgb = ambientLight() + diffuseSpotLight(f) + specularSpotLight(f);
+               fragColor.rgb = ambientLight() + diffuseSpotLight(f) * colorTextura1 + specularSpotLight(f);
                return fragColor;
            }
 
