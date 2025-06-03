@@ -21,6 +21,7 @@ public class LuzGlobalManager : MonoBehaviour
     [Range(0, 1)]
     public float _SpotLightCircleRadius = 0.25f;
 
+    public Vector3 camaraPosition;
     public Color _AmbientLight = Color.black;
 
     // List to hold all materials that need light synchronization
@@ -41,6 +42,8 @@ public class LuzGlobalManager : MonoBehaviour
     // This method updates the shader properties for all synced materials
     public void UpdateAllMaterials()
     {
+        camaraPosition = Camera.main != null ? Camera.main.transform.position : Vector3.zero;
+
         foreach (Material mat in materialsToSync)
         {
             if (mat == null) continue;
@@ -66,6 +69,9 @@ public class LuzGlobalManager : MonoBehaviour
                 mat.SetVector("_SpotLightDirection_w", _SpotLightDirection);
             if (mat.HasProperty("_CircleRadius"))
                 mat.SetFloat("_CircleRadius", _SpotLightCircleRadius);
+
+            if (mat.HasProperty("_CamaraPosition"))
+                mat.SetVector("_CamaraPosition", camaraPosition);
         }
     }
 }

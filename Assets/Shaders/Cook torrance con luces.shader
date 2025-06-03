@@ -2,27 +2,30 @@ Shader "Custom/Cook-Torrance"
 {
     Properties
     {
-        [NoScaleOffset] _Maintex("Texture", 2D) = "white" {}
+        _Maintex("Texture", 2D) = "white" {}
+
+        _DirectionalLightIntensity("Directional Light Intensity", Color) = (0,0,0,1)
+        _DirectionalLightDirection_w("Directional Light Direction", Vector) = (0,0,0,1)
 
         // Luces
-        _PuntualLightIntensity("PuntualLightIntensity", Color) = (0,0,0,1)
+        _PuntualLightIntensity("Puntual Light Intensity", Color) = (0,0,0,1)
         _PuntualLightPosition_w("Puntual Light Position (World)", Vector) = (0,0,0,1)
 
-        _DirectionalLightIntensity("DirectionalLightIntensity", Color) = (0,0,0,1)
-        _DirectionalLightDirection_w("Directional Light Direction (World)", Vector) = (0,0,0,1)
-
-        _SpotLightIntensity("SpotLightIntensity", Color) = (0,0,0,1)
+        _SpotLightIntensity("Spot Light Intensity", Color) = (0,0,0,1)
         _SpotLightPosition_w("Spot Light Position (World)", Vector) = (0,0,0,1)
         _SpotLightDirection_w("Spot Light Direction (World)", Vector) = (0,0,0,1)
-        _CircleRadius("Spotlight size", Range(0,1)) = 0.25
+        _CircleRadius("Spot Light size", Range(0,1)) = 0.25
 
         // Luz ambiental
-        _AmbientLight("AmbientLight", Color) = (0,0,0,1)
+        _AmbientLight("Ambient Light", Color) = (0,0,0,1)
 
         // Par�metros PBR
         _BaseColor("Base Color", Color) = (1,0,0,1)
         _Metallic("Metallic", Range(0,1)) = 0.0
         _Roughness("Roughness", Range(0.05,1)) = 0.3
+
+        // Posicion camara
+        _CamaraPosition("Camara orbital position", Vector) = (90,90,90)
     }
         SubShader
     {
@@ -57,6 +60,7 @@ Shader "Custom/Cook-Torrance"
             float4 _AmbientLight;
             float4 _BaseColor;
             float _Metallic, _Roughness;
+            float4 _CustomCameraPos;
 
             v2f vertexShader(vertexData v) {
                 v2f o;
@@ -116,9 +120,9 @@ Shader "Custom/Cook-Torrance"
 
             fixed4 fragmentShader(v2f f) : SV_Target {
                 float3 N = normalize(f.normal_w);
-                float3 V = normalize(_WorldSpaceCameraPos - f.position_w);
+                float3 V = normalize(_CustomCameraPos - f.position_w);
                 fixed4 colorTextura1 = tex2D(_Maintex, f.uv);
-                float3 color = _AmbientLight.rgb * _BaseColor.rgb;
+                float3 color = _AmbientLight.rgb * _BaseColor.rgb - 0.1;
 
                 float3 Lp = normalize(_PuntualLightPosition_w.xyz - f.position_w.xyz);
                 color += computeLight(N, V, Lp, _PuntualLightIntensity.rgb, colorTextura1.rgb);

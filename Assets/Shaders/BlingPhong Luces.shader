@@ -4,29 +4,32 @@ Shader "Custom/BlingPhong Luces"
     {
         //Textura
         [NoScaleOffset] _Maintex("Texture",2d) = "white" {}
-        
-        //Luz puntual
-        _PuntualLightIntensity("PuntualLightIntensity", Color) = (0,0,0,1)
-        _PuntualLightPosition_w("Puntual Light Position (World)", Vector) = (0,0,0,1)
-        
+       
         //Propiedades de luz direccional
-        _DirectionalLightIntensity("DirectionalLightIntensity", Color) = (0,0,0,1)
-        _DirectionalLightDirection_w("Directional Light Directional (World)", Vector) = (0,0,0,1)
+        _DirectionalLightIntensity("Directional Light Intensity", Color) = (0,0,0,1)
+        _DirectionalLightDirection_w("Directional Light Directional", Vector) = (0,0,0,1)
+
+        //Luz puntual
+        _PuntualLightIntensity("Puntual Light Intensity", Color) = (0,0,0,1)
+        _PuntualLightPosition_w("Puntual Light Position", Vector) = (0,0,0,1)
 
         //Propiedades de luz spot
         _SpotLightIntensity("Spot LightIntensity", Color) = (0,0,0,1)
-        _SpotLightPosition_w("Spot Light Position (World)", Vector) = (0,0,0,1)
-        _SpotLightDirection_w("Spot Light Directional (World)", Vector) = (0,0,0,1)
-        _CircleRadius("Spotlight size",Range(0,1)) = 0.25
+        _SpotLightPosition_w("Spot Light Position", Vector) = (0,0,0,1)
+        _SpotLightDirection_w("Spot Light Directional", Vector) = (0,0,0,1)
+        _CircleRadius("Spot Light size",Range(0,1)) = 0.25
 
         //Luz ambiental
-        _AmbientLight("AmbientLight", Color) = (0,0,0,1)
+        _AmbientLight("Ambient Light", Color) = (0,0,0,1)
 
         //Constantes de los materiales
         _MaterialKa ("MaterialKa", Color) = (0,0,0,1)
         _MaterialKd ("MaterialKd", Color) = (0,0,0,1)
         _MaterialKs ("MaterialKs", Color) = (0,0,0,1)
         _Material_n ("Material_n",float) = 20
+
+        // Posicion camara
+        _CamaraPosition("Camara orbital position", Vector) = (90,90,90)
     }
     SubShader
     {
@@ -74,7 +77,9 @@ Shader "Custom/BlingPhong Luces"
             float4 _MaterialKd;
             float4 _MaterialKs;
             float _Material_n;
-           
+            float4 _CustomCameraPos;
+
+        
            v2f vertexShader(vertexData v)
            {
                v2f output;
@@ -104,7 +109,7 @@ Shader "Custom/BlingPhong Luces"
                float3 L = normalize(_PuntualLightPosition_w - f.position_w);
                float3 N = normalize(f.normal_w);
                float3 R = reflect(-L, N);
-               float3 V = normalize(_WorldSpaceCameraPos - f.position_w);
+               float3 V = normalize(_CustomCameraPos - f.position_w);
                float3 specular = _PuntualLightIntensity * _MaterialKs * pow(max(0, dot(R, V)), max(0,_Material_n));
                return specular;
            }
@@ -131,7 +136,7 @@ Shader "Custom/BlingPhong Luces"
                float3 L = normalize(-_DirectionalLightDirection_w);
                float3 N = normalize(f.normal_w);
                float3 R = reflect(L, N);
-               float3 V = normalize(_WorldSpaceCameraPos - f.position_w);
+               float3 V = normalize(_CustomCameraPos - f.position_w);
                float3 specular = _DirectionalLightIntensity * _MaterialKs * pow(max(0, dot(R, V)), max(0, _Material_n));
                return specular;
            }
@@ -164,7 +169,7 @@ Shader "Custom/BlingPhong Luces"
                float3 L = normalize(_SpotLightPosition_w - f.position_w);
                float3 N = normalize(f.normal_w);
                float3 R = reflect(-L, N);
-               float3 V = normalize(_WorldSpaceCameraPos - f.position_w);
+               float3 V = normalize(_CustomCameraPos - f.position_w);
                float3 lightDirection = normalize(-_SpotLightDirection_w);
                float3 RdotV = 0;
                if (dot(L, lightDirection) > 1-_CircleRadius)
