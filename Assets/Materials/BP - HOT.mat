@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BP - HOT
-  m_Shader: {fileID: 4800000, guid: 8e4930d403e49284ea100155d4b67654, type: 3}
+  m_Shader: {fileID: 4800000, guid: cd57c4cfc2059194e96cff04854647b7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -51,6 +51,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: -51.57, y: 102.55}
+    - _Maintex:
+        m_Texture: {fileID: 2800000, guid: 42a31b90d27375642ab2b7f287339b8f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -67,6 +71,7 @@ Material:
     m_Floats:
     - _Ambient: 0.1
     - _BumpScale: 1
+    - _CircleRadius: 0.25
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _Diffuse: 0.9198
@@ -75,6 +80,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Material_n: 20
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -88,9 +94,21 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
+    - _CamaraPosition: {r: 245.62, g: 204.6, b: -343.3, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DifColor: {r: 0.6, g: 0.3, b: 0.1, a: 1}
+    - _DirectionalLightDirection_w: {r: 0, g: 0, b: 0, a: 0}
+    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
     - _EmiColor: {r: 0.5, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MaterialKa: {r: 1, g: 1, b: 1, a: 1}
+    - _MaterialKd: {r: 1, g: 1, b: 1, a: 1}
+    - _MaterialKs: {r: 0.4245283, g: 0.1742168, b: 0.1742168, a: 1}
+    - _PuntualLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+    - _PuntualLightPosition_w: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.4392157, g: 0, b: 0, a: 1}
+    - _SpotLightDirection_w: {r: 0, g: 0, b: 0, a: 0}
+    - _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

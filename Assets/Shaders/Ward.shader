@@ -4,16 +4,15 @@ Shader "Custom/WardWithLights"
     {
         _Maintex("Texture", 2D) = "white" {}
 
-        // Luces
-        _PuntualLightIntensity("PuntualLightIntensity", Color) = (1,1,1,1)
-        _PuntualLightPosition_w("Puntual Light Position", Vector) = (0,5,0,1)
-
-        _DirectionalLightIntensity("DirectionalLightIntensity", Color) = (0.5,0.5,0.5,1)
+        _DirectionalLightIntensity("Directional Light Intensity", Color) = (0.5,0.5,0.5,1)
         _DirectionalLightDirection_w("Directional Light Direction", Vector) = (0,-1,0,0)
 
-        _SpotLightIntensity("SpotLightIntensity", Color) = (1,1,1,1)
-        _SpotLightPosition_w("SpotLight Position", Vector) = (0,5,0,1)
-        _SpotLightDirection_w("SpotLight Direction", Vector) = (0,-1,0,0)
+        _PuntualLightIntensity("Puntual Light Intensity", Color) = (1,1,1,1)
+        _PuntualLightPosition_w("Puntual Light Position", Vector) = (0,5,0,1)
+
+        _SpotLightIntensity("Spot Light Intensity", Color) = (1,1,1,1)
+        _SpotLightPosition_w("Spot Light Position", Vector) = (0,5,0,1)
+        _SpotLightDirection_w("Spot Light Direction", Vector) = (0,-1,0,0)
         _CircleRadius("Spotlight Size", Range(0,1)) = 0.25
 
         _AmbientLight("Ambient Light", Color) = (0.2,0.2,0.2,1)
@@ -42,6 +41,7 @@ Shader "Custom/WardWithLights"
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
                 float2 uv : TEXCOORD0;
+                float4 tangent: TANGENT;
             };
 
             struct v2f
@@ -50,6 +50,7 @@ Shader "Custom/WardWithLights"
                 float3 worldPos : TEXCOORD1;
                 float3 normal : TEXCOORD2;
                 float2 uv : TEXCOORD0;
+                float3 worldTangent : TEXCOORD3;
             };
 
             sampler2D _Maintex;
@@ -69,6 +70,7 @@ Shader "Custom/WardWithLights"
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex);
                 o.normal = UnityObjectToWorldNormal(v.normal);
+                o.worldTangent = UnityObjectToWorldDir(v.tangent.xyz);
                 o.uv = v.uv;
                 return o;
             }
@@ -79,33 +81,35 @@ Shader "Custom/WardWithLights"
                 float3 X = normalize(cross(N, float3(0.0, 1.0, 0.0)));
                 float3 Y = cross(X, N);
 
-                float3 H_proj = H - dot(H, N) * N;
+                float3 H_proj = normalize(H - dot(H, N) * N);
                 float hx = dot(H_proj, X);
                 float hy = dot(H_proj, Y);
 
                 float alpha = (hx * hx) / (_AlphaX * _AlphaX) + (hy * hy) / (_AlphaY * _AlphaY);
-                float NdotL = max(dot(N, L), 0.0001);
-                float NdotV = max(dot(N, V), 0.0001);
-                float NdotH = max(dot(N, H), 0.0001);
+                float NdotL = max(dot(N, L), 0);
+                float NdotV = max(dot(N, V), 0);
+                float NdotH = max(dot(N, H), 0);
 
-                float exponent = -alpha / (NdotH * NdotH);
-                float denom = 4 * UNITY_PI * _AlphaX * _AlphaY * sqrt(NdotL * NdotV);
+                float exponent = (-2.0 * alpha) / (1.0 + NdotH);
+                float denom = 4 * UNITY_PI * _AlphaX * _AlphaY * sqrt(max((NdotL * NdotV),1e-5)) ;
 
                 return _MaterialKs.rgb * exp(exponent) / denom;
             }
 
-            float3 ComputeLighting(float3 L, float3 lightColor, float3 N, float3 V, float attenuation)
+            float3 ComputeLighting(float3 L, float3 lightColor, float3 N, float3 V, float attenuation, float3 colorTextura)
             {
                 float NdotL = max(0, dot(N, L));
                 float3 diffuse = _MaterialKd.rgb * lightColor * NdotL;
-                float3 specular = wardSpecular(L, V, N) * lightColor;
-                return attenuation * (diffuse + specular);
+                float3 specular = wardSpecular(L, V, N) * lightColor * colorTextura;
+                return attenuation * (diffuse * colorTextura + specular);
             }
 
             fixed4 frag(v2f i) : SV_Target
             {
                 float3 N = normalize(i.normal);
                 float3 V = normalize(_WorldSpaceCameraPos - i.worldPos);
+                float3 X = normalize(i.worldTangent);
+                float3 Y = cross(X, N);
 
                 float3 color = _AmbientLight.rgb * _MaterialKa.rgb;
                 float3 texColor = tex2D(_Maintex, i.uv).rgb;
@@ -114,11 +118,11 @@ Shader "Custom/WardWithLights"
                 float3 Lp = _PuntualLightPosition_w.xyz - i.worldPos;
                 float distP = length(Lp);
                 float attenP = 1.0 / (1.0 + distP * distP);
-                color += ComputeLighting(normalize(Lp), _PuntualLightIntensity.rgb, N, V, attenP);
+                color += ComputeLighting(normalize(Lp), _PuntualLightIntensity.rgb, N, V, attenP, texColor);
 
                 // Luz direccional
                 float3 Ld = normalize(-_DirectionalLightDirection_w.xyz);
-                color += ComputeLighting(Ld, _DirectionalLightIntensity.rgb, N, V, 1.0);
+                color += ComputeLighting(Ld, _DirectionalLightIntensity.rgb, N, V, 1.0, texColor);
 
                 // Luz spot
                 float3 Ls = _SpotLightPosition_w.xyz - i.worldPos;
@@ -126,9 +130,9 @@ Shader "Custom/WardWithLights"
                 float3 Ls_norm = normalize(Ls);
                 float theta = dot(Ls_norm, spotDir);
                 float attenS = step(1 - _CircleRadius, theta) / (1.0 + dot(Ls, Ls));
-                color += ComputeLighting(Ls_norm, _SpotLightIntensity.rgb, N, V, attenS);
+                color += ComputeLighting(Ls_norm, _SpotLightIntensity.rgb, N, V, attenS, texColor);
 
-                return float4(color * texColor, 1.0);
+                return float4(color , 1.0);
             }
             ENDCG
         }

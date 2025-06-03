@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ward - M2D
-  m_Shader: {fileID: 4800000, guid: 8653093c634970c44bf9977698df39d7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 594b198d76f532f40894848c9125f79c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -49,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Maintex:
         m_Texture: {fileID: 2800000, guid: cb420484903f54c4da12951b055c459b, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 5.7, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -65,34 +65,45 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaX: 1
+    - _AlphaY: 1
     - _BumpScale: 1
-    - _CircleRadius: 0.25
+    - _CircleRadius: 0.99
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.097
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Roughness: 0.05
+    - _Roughness: 0.24
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: -24.27, g: -16.13, b: -7.92, a: 0}
+    - _DirectionalLightDirection_w: {r: -10.7, g: -16.13, b: -7.92, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _MaterialKa: {r: 0.14465404, g: 0.14465404, b: 0.14465404, a: 1}
+    - _MaterialKd: {r: 0.72955966, g: 0.72955966, b: 0.72955966, a: 1}
+    - _MaterialKs: {r: 0.06918234, g: 0.06918234, b: 0.06918234, a: 1}
+    - _PuntualLightIntensity: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     - _PuntualLightPosition_w: {r: -0.4, g: 8.96, b: -9.73, a: 0}
+<<<<<<< HEAD
     - _SpotLightDirection_w: {r: -3.85, g: -6.98, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 0, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 39.12, b: 0, a: 0}
+=======
+    - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
+    - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 1.48, b: 0, a: 0}
+>>>>>>> 36d64a997c24bfb90df0b39ae60683025e475c12
   m_BuildTextureStacks: []

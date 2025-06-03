@@ -84,8 +84,14 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+<<<<<<< HEAD:Assets/Materials/MaterialsB/Cook - Torrance - Plastico.mat
     - _AmbientLight: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     - _BaseColor: {r: 0.9, g: 0.05, b: 0.05, a: 1}
+=======
+    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CamaraPosition: {r: 0, g: 1, b: -10, a: 0}
+>>>>>>> 36d64a997c24bfb90df0b39ae60683025e475c12:Assets/Materials/MaterialsB/cooktorrance luces globales prueba.mat
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightDirection_w: {r: 11.784483, g: -6.720255, b: 14, a: 0}
     - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}

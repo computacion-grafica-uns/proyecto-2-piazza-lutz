@@ -72,7 +72,7 @@ Material:
     m_Floats:
     - _Ambient: 0.2
     - _BumpScale: 1
-    - _CircleRadius: 0.25
+    - _CircleRadius: 0.99
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _Diffuse: 1
@@ -96,19 +96,26 @@ Material:
     m_Colors:
     - _AmbColor: {r: 0.8941177, g: 0.03137255, b: 0.03137255, a: 1}
     - _AmbientLight: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    - _CamaraPosition: {r: 245.62, g: 204.6, b: -343.3, a: 0}
     - _Color: {r: 0.8930817, g: 0.03089266, b: 0.03089266, a: 1}
     - _DifColor: {r: 0.78616345, g: 0.08652733, b: 0.08652733, a: 1}
-    - _DirectionalLightDirection_w: {r: -24.27, g: -16.13, b: -7.92, a: 0}
+    - _DirectionalLightDirection_w: {r: -10.7, g: -16.13, b: -7.92, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmiColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MaterialKa: {r: 0.3, g: 0.05, b: 0.05, a: 1}
     - _MaterialKd: {r: 0.8, g: 0.1, b: 0.1, a: 1}
     - _MaterialKs: {r: 0.4, g: 0.15, b: 0.15, a: 1}
-    - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _PuntualLightIntensity: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     - _PuntualLightPosition_w: {r: -0.4, g: 8.96, b: -9.73, a: 0}
     - _SpecColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
+<<<<<<< HEAD
     - _SpotLightDirection_w: {r: -3.85, g: -6.98, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 0, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 39.12, b: 0, a: 0}
+=======
+    - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
+    - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 1.48, b: 0, a: 0}
+>>>>>>> 36d64a997c24bfb90df0b39ae60683025e475c12
   m_BuildTextureStacks: []
