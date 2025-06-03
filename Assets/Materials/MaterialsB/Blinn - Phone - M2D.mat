@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blinn - Phone - M2D
+  m_Shader: {fileID: 4800000, guid: 594b198d76f532f40894848c9125f79c, type: 3}
+  m_Parent: {fileID: 2100000, guid: 0f4f0e6e6b7541942be0fc976bd278fc, type: 2}
+  m_ModifiedSerializedProperties: 8
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Maintex:
+        m_Texture: {fileID: 2800000, guid: cb420484903f54c4da12951b055c459b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _CircleRadius: 0.142
+    - _Material_n: 20
+    m_Colors:
+    - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightDirection_w: {r: 11.784483, g: -6.720255, b: 14, a: 0}
+    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+    - _MaterialKa: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+    - _MaterialKd: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+    - _MaterialKs: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
+    - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _PuntualLightPosition_w: {r: -0.15804657, g: 17.821169, b: 16.941193, a: 0}
+    - _SpotLightDirection_w: {r: 0, g: -72.48073, b: 1.5813491, a: 0}
+    - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _SpotLightPosition_w: {r: -11.552688, g: 17.373915, b: 2.4135175, a: 0}
+  m_BuildTextureStacks: []
