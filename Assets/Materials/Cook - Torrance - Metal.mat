@@ -96,5 +96,4 @@ Material:
     - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 1.48, b: 0, a: 0}
->>>>>>> 36d64a997c24bfb90df0b39ae60683025e475c12
   m_BuildTextureStacks: []
