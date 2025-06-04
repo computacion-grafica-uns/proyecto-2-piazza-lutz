@@ -655,6 +655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0121daa0b711c4e4dbd587fe77c6269c, type: 2}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
       value: tetera18
@@ -663,6 +667,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FocusTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 4188531639213701860, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0121daa0b711c4e4dbd587fe77c6269c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1187,6 +1195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 36723f57ac009884c9ed2c050be59941, type: 2}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
       value: tetera20
@@ -1195,6 +1207,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FocusTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 4188531639213701860, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 36723f57ac009884c9ed2c050be59941, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1861,6 +1877,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1966e1e8b2c42c94ba6de3a46d1c79e8, type: 2}
     - target: {fileID: 919132149155446097, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
       propertyPath: m_Name
       value: tetera19
@@ -1869,6 +1889,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FocusTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 4188531639213701860, guid: 6b8bef31d43eb954e93fe8c51f38805e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1966e1e8b2c42c94ba6de3a46d1c79e8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2221,16 +2245,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c0142597f3b084ca92cf83d4af3cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PunctualLightIntensity: {r: 0.5660378, g: 0.24142049, b: 0.06140977, a: 1}
-  _PunctualLightPosition: {x: -0.4, y: 86.42533, z: 14.137537}
-  _DirectionalLightIntensity: {r: 0.745283, g: 0.06679422, b: 0.59227043, a: 1}
+  _PunctualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+  _PunctualLightPosition: {x: 72.85507, y: 6.2500353, z: 147.57477}
+  _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
   _DirectionalLightDirection: {x: -22.703232, y: -16.130005, z: -12.792297}
-  _SpotLightIntensity: {r: 0.22830069, g: 0.6509434, b: 0, a: 1}
-  _SpotLightPosition: {x: 0, y: 12.503193, z: -69.2023}
-  _SpotLightDirection: {x: 0, y: -5, z: 0}
-  _SpotLightCircleRadius: 0.99
+  _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+  _SpotLightPosition: {x: 0, y: 112.82005, z: -69.2023}
+  _SpotLightDirection: {x: 0, y: 1.3543804, z: 4.813211}
+  _SpotLightCircleRadius: 0.363
   camaraPosition: {x: 245.62, y: 232.6, z: -347.4}
-  _AmbientLight: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+  _AmbientLight: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   materialsToSync:
   - {fileID: 2100000, guid: 3547c1ad8d97b9c448e49771eb9ccc1b, type: 2}
   - {fileID: 2100000, guid: bf7db99ca0e6c484889afe8563bbeb82, type: 2}
@@ -2250,6 +2274,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2bc5d8db83776684abccab6fb843eb6c, type: 2}
   - {fileID: 2100000, guid: 0b4c9c65013570c4280795477ff924a0, type: 2}
   - {fileID: 2100000, guid: 77af442519ccb56419eee5946ae53a86, type: 2}
+  - {fileID: 2100000, guid: 1966e1e8b2c42c94ba6de3a46d1c79e8, type: 2}
+  - {fileID: 2100000, guid: 0121daa0b711c4e4dbd587fe77c6269c, type: 2}
+  - {fileID: 2100000, guid: 105fb71c1c3a35e43adbba71aae28921, type: 2}
+  - {fileID: 2100000, guid: 6b47fc2b31b893b46bfbf9fde04623e7, type: 2}
+  - {fileID: 2100000, guid: 36723f57ac009884c9ed2c050be59941, type: 2}
 --- !u!1001 &1997869857
 PrefabInstance:
   m_ObjectHideFlags: 0
