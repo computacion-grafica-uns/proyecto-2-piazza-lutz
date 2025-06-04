@@ -14,11 +14,12 @@ public class CambioEscenas : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             CambiarEscena(numeroEscena);
+            numeroEscena = numeroEscena == 0 ? 1 : 0;
         }
-        numeroEscena = numeroEscena == 0 ? 1 : 0;
+       
     }
 
     private void CambiarEscena(int numero)
