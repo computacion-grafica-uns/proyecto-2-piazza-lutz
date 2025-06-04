@@ -31,7 +31,7 @@ Material:
     m_Floats:
     - _Material_n: 104.74
     m_Colors:
-    - _CamaraPosition: {r: 90, g: 90, b: 90, a: 1}
+    - _CamaraPosition: {r: 245.62, g: 232.6, b: -347.4, a: 0}
     - _MaterialKa: {r: 0.5660378, g: 0.14684944, b: 0.14684944, a: 1}
     - _MaterialKd: {r: 0.41509432, g: 0.107689574, b: 0.107689574, a: 1}
     - _MaterialKs: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
