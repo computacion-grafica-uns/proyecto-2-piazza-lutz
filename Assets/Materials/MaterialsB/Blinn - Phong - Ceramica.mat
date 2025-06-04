@@ -95,6 +95,7 @@ Material:
     m_Colors:
     - _AmbColor: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientLight: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    - _CamaraPosition: {r: 0, g: 1, b: -10, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DifColor: {r: 0.6, g: 0.3, b: 0.1, a: 1}
     - _DirectionalLightDirection_w: {r: 11.784483, g: -6.720255, b: 14, a: 0}
