@@ -1,4 +1,4 @@
-Shader "Custom/Cook-Torrance"
+Shader "Custom/Cook-Torrance_Fixed"
 {
     Properties
     {
@@ -7,7 +7,6 @@ Shader "Custom/Cook-Torrance"
         _DirectionalLightIntensity("Directional Light Intensity", Color) = (0,0,0,1)
         _DirectionalLightDirection_w("Directional Light Direction", Vector) = (0,0,0,1)
 
-        // Luces
         _PuntualLightIntensity("Puntual Light Intensity", Color) = (0,0,0,1)
         _PuntualLightPosition_w("Puntual Light Position (World)", Vector) = (0,0,0,1)
 
@@ -16,18 +15,16 @@ Shader "Custom/Cook-Torrance"
         _SpotLightDirection_w("Spot Light Direction (World)", Vector) = (0,0,0,1)
         _CircleRadius("Spot Light size", Range(0,1)) = 0.25
 
-        // Luz ambiental
         _AmbientLight("Ambient Light", Color) = (0,0,0,1)
 
-        // Par�metros PBR
         _BaseColor("Base Color", Color) = (1,0,0,1)
         _Metallic("Metallic", Range(0,1)) = 0.0
         _Roughness("Roughness", Range(0.05,1)) = 0.3
 
-        // Posicion camara
         _CamaraPosition("Camara orbital position", Vector) = (90,90,90)
     }
-        SubShader
+
+    SubShader
     {
         Tags { "RenderType" = "Opaque" }
         LOD 100
@@ -78,7 +75,7 @@ Shader "Custom/Cook-Torrance"
             float DistributionGGX(float3 N, float3 H, float roughness) {
                 float a = roughness * roughness;
                 float a2 = a * a;
-                float NdotH = max(dot(N, H), 0.0);
+                float NdotH = max(dot(N, H), 0.05); // aseguramos piso
                 float NdotH2 = NdotH * NdotH;
                 float denom = NdotH2 * (a2 - 1.0) + 1.0;
                 return a2 / (UNITY_PI * denom * denom);
@@ -91,49 +88,55 @@ Shader "Custom/Cook-Torrance"
             }
 
             float GeometrySmith(float3 N, float3 V, float3 L, float roughness) {
-                float ggx1 = GeometrySchlickGGX(max(dot(N, V), 0.0), roughness);
-                float ggx2 = GeometrySchlickGGX(max(dot(N, L), 0.0), roughness);
+                float ggx1 = GeometrySchlickGGX(max(dot(N, V), 0.05), roughness);
+                float ggx2 = GeometrySchlickGGX(max(dot(N, L), 0.05), roughness);
                 return ggx1 * ggx2;
             }
 
             float3 CookTorranceSpecular(float3 N, float3 V, float3 L, float roughness, float3 F0) {
                 float3 H = normalize(V + L);
+                float NdotV = max(dot(N, V), 0.05);
+                float NdotL = max(dot(N, L), 0.05);
+                float HdotV = max(dot(H, V), 0.05);
+                float3 F = FresnelSchlick(HdotV, F0);
                 float D = DistributionGGX(N, H, roughness);
                 float G = GeometrySmith(N, V, L, roughness);
-                float3 F = FresnelSchlick(max(dot(H, V), 0.0), F0);
-                return (G * D * F) / (4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.001);
+                return (G * D * F) / (4.0 * NdotV * NdotL + 0.001);
             }
 
-            float3 computeLight(float3 N, float3 V, float3 L, float3 lightColor, float3 colorTextura) {
-                float3 F0 = lerp(0.04, _BaseColor.rgb, _Metallic);
+            float3 computeLight(float3 N, float3 V, float3 L, float3 lightColor, float3 baseColor) {
+                float3 F0 = lerp(0.04, baseColor, _Metallic);
                 float3 H = normalize(V + L);
-                float3 F = FresnelSchlick(max(dot(H, V), 0.0), F0);
+                float HdotV = max(dot(H, V), 0.05);
+                float3 F = FresnelSchlick(HdotV, F0);
                 float3 kD = (1.0 - F) * (1.0 - _Metallic);
 
-                float NdotL = max(dot(N, L), 0.0);
+                float NdotL = max(dot(N, L), 0.05); // piso mínimo
 
-                float3 diffuse = kD * _BaseColor.rgb / UNITY_PI;
+                float3 diffuse = kD * baseColor / UNITY_PI;
                 float3 specular = CookTorranceSpecular(N, V, L, _Roughness, F0);
 
-                return (diffuse * colorTextura + specular) * lightColor * NdotL;
+                return (diffuse + specular) * lightColor * NdotL;
             }
 
             fixed4 fragmentShader(v2f f) : SV_Target {
                 float3 N = normalize(f.normal_w);
-                float3 V = normalize(_CustomCameraPos - f.position_w);
-                fixed4 colorTextura1 = tex2D(_Maintex, f.uv);
-                float3 color = _AmbientLight.rgb * _BaseColor.rgb - 0.1;
+                float3 V = normalize(_CustomCameraPos.xyz - f.position_w.xyz);
+                fixed4 tex = tex2D(_Maintex, f.uv);
+                float3 baseColor = tex.rgb * _BaseColor.rgb;
+
+                float3 color = _AmbientLight.rgb * baseColor;
 
                 float3 Lp = normalize(_PuntualLightPosition_w.xyz - f.position_w.xyz);
-                color += computeLight(N, V, Lp, _PuntualLightIntensity.rgb, colorTextura1.rgb);
+                color += computeLight(N, V, Lp, _PuntualLightIntensity.rgb, baseColor);
 
                 float3 Ld = normalize(-_DirectionalLightDirection_w.xyz);
-                color += computeLight(N, V, Ld, _DirectionalLightIntensity.rgb, colorTextura1.rgb);
+                color += computeLight(N, V, Ld, _DirectionalLightIntensity.rgb, baseColor);
 
                 float3 Ls = normalize(_SpotLightPosition_w.xyz - f.position_w.xyz);
                 float3 spotDir = normalize(-_SpotLightDirection_w.xyz);
-                float att = dot(Ls, spotDir) > 1 - _CircleRadius ? 1 : 0;
-                color += computeLight(N, V, Ls, _SpotLightIntensity.rgb, colorTextura1.rgb) * att;
+                float att = dot(Ls, spotDir) > 1.0 - _CircleRadius ? 1.0 : 0.0;
+                color += computeLight(N, V, Ls, _SpotLightIntensity.rgb, baseColor) * att;
 
                 return fixed4(color, 1.0);
             }

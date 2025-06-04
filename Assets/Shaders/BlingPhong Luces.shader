@@ -119,7 +119,8 @@ Shader "Custom/BlingPhong Luces"
                fixed4 fragColor = 0;
                fixed4 colorTextura1 = tex2D(_Maintex, f.uv);
                //fragColor.rgb = ambientLight() + diffusePuntualLight(f) + specularPuntualLight(f);
-               fragColor.rgb = ambientLight() + diffusePuntualLight(f) * colorTextura1 + specularPuntualLight(f);
+               float3 light = ambientLight() + diffusePuntualLight(f) + specularPuntualLight(f);
+               fragColor.rgb = light * colorTextura1.rgb;
                return fragColor;
            }
 
@@ -127,7 +128,8 @@ Shader "Custom/BlingPhong Luces"
            {
                float3 N = normalize(f.normal_w);
                float3 L = normalize(-_DirectionalLightDirection_w);
-               float3 diffuse = _DirectionalLightIntensity * _MaterialKd * dot(L, N);
+               float NdotL = max (0, dot(N,L));
+               float3 diffuse = _DirectionalLightIntensity * _MaterialKd * NdotL;
                return diffuse;
            }
 
@@ -146,7 +148,8 @@ Shader "Custom/BlingPhong Luces"
                fixed4 fragColor = 0;
                fixed4 colorTextura1 = tex2D(_Maintex, f.uv);
                //fragColor.rgb = ambientLight() + diffuseDirectionalLight(f) + specularDirectionalLight(f);
-               fragColor.rgb = ambientLight() + diffuseDirectionalLight(f) * colorTextura1 + specularDirectionalLight(f);
+               float3 light = ambientLight() + diffuseDirectionalLight(f) + specularDirectionalLight(f);
+               fragColor.rgb = light * colorTextura1.rgb;
                return fragColor;
            }
 
@@ -185,7 +188,8 @@ Shader "Custom/BlingPhong Luces"
                fixed4 fragColor = 0;
                fixed4 colorTextura1 = tex2D(_Maintex, f.uv);
                //fragColor.rgb = ambientLight() + diffuseSpotLight(f) + specularSpotLight(f);
-               fragColor.rgb = ambientLight() + diffuseSpotLight(f) * colorTextura1 + specularSpotLight(f);
+               float3 light = ambientLight() + diffuseDirectionalLight(f) + specularDirectionalLight(f);
+               fragColor.rgb = light * colorTextura1.rgb;
                return fragColor;
            }
 

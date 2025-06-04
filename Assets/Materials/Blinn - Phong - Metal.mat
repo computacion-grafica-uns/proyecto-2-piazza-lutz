@@ -81,7 +81,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Material_n: 1.9
+    - _Material_n: 1.5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -95,7 +95,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbColor: {r: 1, g: 1, b: 1, a: 1}
-    - _AmbientLight: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    - _AmbientLight: {r: 0.01886791, g: 0.0021953194, b: 0.0021953194, a: 1}
     - _CamaraPosition: {r: 245.62, g: 204.6, b: -343.3, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DifColor: {r: 0.958, g: 0.448, b: 0, a: 1}
@@ -103,9 +103,9 @@ Material:
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmiColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.3, g: 0.1, b: 0.08, a: 1}
-    - _MaterialKd: {r: 1, g: 0.36, b: 0.23, a: 1}
-    - _MaterialKs: {r: 0.9, g: 0.45, b: 0.3, a: 1}
+    - _MaterialKa: {r: 0.18867922, g: 0.020215627, b: 0, a: 1}
+    - _MaterialKd: {r: 0.3962264, g: 0.094923705, b: 0.033641804, a: 1}
+    - _MaterialKs: {r: 0.3584906, g: 0.15055695, b: 0.08004032, a: 1}
     - _PuntualLightIntensity: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     - _PuntualLightPosition_w: {r: -0.4, g: 8.96, b: -9.73, a: 0}
     - _SpecColor: {r: 0.81761, g: 0.65055, b: 0.40366277, a: 1}
