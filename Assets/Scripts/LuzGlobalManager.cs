@@ -72,6 +72,8 @@ public class LuzGlobalManager : MonoBehaviour
 
             if (mat.HasProperty("_CamaraPosition"))
                 mat.SetVector("_CamaraPosition", camaraPosition);
+            if (mat.HasProperty("_AmbientLight"))
+                mat.SetVector("_AmbientLight", _AmbientLight);
         }
     }
 }

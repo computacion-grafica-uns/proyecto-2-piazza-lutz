@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon - Metal
-  m_Shader: {fileID: 4800000, guid: c52157e5a7e4bae4da02a65a79c72dba, type: 3}
+  m_Name: Toon - Multitextura
+  m_Shader: {fileID: 4800000, guid: 9a7d20776e7a0d74e92367bf74a7ee9f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Maintex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 28c583d49dc10314f8c9516d9e13f5ba, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -57,6 +57,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Secondtex:
+        m_Texture: {fileID: 2800000, guid: e552fcda26a940c459b7b16bb76b7ddd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -75,7 +79,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Threshold: 0.38
+    - _Threshold: 0.266
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
@@ -84,10 +88,10 @@ Material:
     - _DirectionalLightDirection_w: {r: -22.703232, g: -16.130005, b: -12.792297, a: 0}
     - _DirectionalLightIntensity: {r: 0.745283, g: 0.06679422, b: 0.59227043, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKd: {r: 0.48427665, g: 0.116412655, b: 0, a: 1}
+    - _MaterialKd: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
     - _PuntualLightIntensity: {r: 0.5660378, g: 0.24142049, b: 0.06140977, a: 1}
     - _PuntualLightPosition_w: {r: -0.4, g: 86.42533, b: 14.137537, a: 0}
-    - _ShadeColor: {r: 0.3207547, g: 0.063545704, b: 0.07519016, a: 1}
+    - _ShadeColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
     - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
     - _SpotLightIntensity: {r: 0.22830069, g: 0.6509434, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 12.503193, b: -69.2023, a: 0}

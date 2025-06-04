@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon - Metal
-  m_Shader: {fileID: 4800000, guid: c52157e5a7e4bae4da02a65a79c72dba, type: 3}
+  m_Name: Blinn - Phong - Multitextura
+  m_Shader: {fileID: 4800000, guid: 8fb258a01b761e848854c00b5b98a4bb, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Maintex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 06332bc693531f14881593b72dd63baf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -59,35 +59,53 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Secondtex:
+        m_Texture: {fileID: 2800000, guid: 42a31b90d27375642ab2b7f287339b8f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex0:
+        m_Texture: {fileID: 2800000, guid: d95bfab1d799d984283535b5ee74601d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex1:
+        m_Texture: {fileID: 2800000, guid: a3cd1181803f339479d1c8580071e33a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _CircleRadius: 0.99
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DetailStrength: 0.474
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _Material_n: 9.5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PuntualLightRange: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpotLightAngle: 30
+    - _SpotLightFadeRange: 0.1
     - _SrcBlend: 1
-    - _Threshold: 0.38
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+    - _CamaraPosition: {r: 245.62, g: 232.6, b: -347.4, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightDirection_w: {r: -22.703232, g: -16.130005, b: -12.792297, a: 0}
     - _DirectionalLightIntensity: {r: 0.745283, g: 0.06679422, b: 0.59227043, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKd: {r: 0.48427665, g: 0.116412655, b: 0, a: 1}
+    - _MaterialKa: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    - _MaterialKd: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+    - _MaterialKs: {r: 1, g: 0, b: 0, a: 1}
     - _PuntualLightIntensity: {r: 0.5660378, g: 0.24142049, b: 0.06140977, a: 1}
     - _PuntualLightPosition_w: {r: -0.4, g: 86.42533, b: 14.137537, a: 0}
-    - _ShadeColor: {r: 0.3207547, g: 0.063545704, b: 0.07519016, a: 1}
     - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
     - _SpotLightIntensity: {r: 0.22830069, g: 0.6509434, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 12.503193, b: -69.2023, a: 0}
