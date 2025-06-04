@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Necesario para la gestión de escenas
+using UnityEngine.SceneManagement; // Necesario para la gestiï¿½n de escenas
 
 public class CambioEscenas : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class CambioEscenas : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        /*if (Input.GetKeyDown(KeyCode.L))
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             if (currentSceneName == escenaInicial)
@@ -24,6 +24,6 @@ public class CambioEscenas : MonoBehaviour
             {
                 SceneManager.LoadScene(escenaInicial);
             }
-        }
+        }*/
     }
 }
