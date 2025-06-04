@@ -2,20 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Toon - Metal
   m_Shader: {fileID: 4800000, guid: c52157e5a7e4bae4da02a65a79c72dba, type: 3}
-  m_ShaderKeywords: 
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -59,6 +63,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BumpScale: 1
     - _CircleRadius: 0.99
@@ -84,10 +89,10 @@ Material:
     - _DirectionalLightDirection_w: {r: -22.703232, g: -16.130005, b: -12.792297, a: 0}
     - _DirectionalLightIntensity: {r: 0.745283, g: 0.06679422, b: 0.59227043, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKd: {r: 0.48427665, g: 0.116412655, b: 0, a: 1}
+    - _MaterialKd: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     - _PuntualLightIntensity: {r: 0.5660378, g: 0.24142049, b: 0.06140977, a: 1}
     - _PuntualLightPosition_w: {r: -0.4, g: 86.42533, b: 14.137537, a: 0}
-    - _ShadeColor: {r: 0.3207547, g: 0.063545704, b: 0.07519016, a: 1}
+    - _ShadeColor: {r: 0.3333333, g: 0.3333333, b: 0.3333333, a: 1}
     - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
     - _SpotLightIntensity: {r: 0.22830069, g: 0.6509434, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 12.503193, b: -69.2023, a: 0}

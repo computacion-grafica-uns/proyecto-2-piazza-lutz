@@ -3,7 +3,7 @@ Shader "Custom/BlingPhong Luces"
     Properties
     {
         //Textura
-        [NoScaleOffset] _Maintex("Texture",2d) = "white" {}
+        _Maintex("Texture",2d) = "white" {}
        
         //Propiedades de luz direccional
         _DirectionalLightIntensity("Directional Light Intensity", Color) = (0,0,0,1)
@@ -59,6 +59,7 @@ Shader "Custom/BlingPhong Luces"
             };
             
             sampler2D _Maintex;
+            float4 _Maintex_ST;
            
             float4 _PuntualLightIntensity;
             float4 _PuntualLightPosition_w;
@@ -82,12 +83,12 @@ Shader "Custom/BlingPhong Luces"
         
            v2f vertexShader(vertexData v)
            {
-               v2f output;
-               output.uv = v.uv;
-               output.position = UnityObjectToClipPos(v.position);
-               output.position_w = mul(unity_ObjectToWorld, v.position);
-               output.normal_w = UnityObjectToWorldNormal(v.normal);
-               return output;
+                v2f output;
+                output.uv = TRANSFORM_TEX(v.uv, _Maintex);
+                output.position = UnityObjectToClipPos(v.position);
+                output.position_w = mul(unity_ObjectToWorld, v.position);
+                output.normal_w = UnityObjectToWorldNormal(v.normal);
+                return output;
            }
 
            float3 ambientLight()

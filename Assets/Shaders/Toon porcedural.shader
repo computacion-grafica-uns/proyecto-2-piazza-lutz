@@ -1,4 +1,4 @@
-Shader "Custom/ToonShader_Marble"
+Shader "Custom/ToonShader_LucesCompatible_Perlin"
 {
     Properties
     {
@@ -9,14 +9,17 @@ Shader "Custom/ToonShader_Marble"
         _MaterialKd("Material Kd (Base Color)", Color) = (1, 1, 1, 1)
 
         _AmbientLight("Ambient Light", Color) = (0.1, 0.1, 0.1, 1)
-        _DirectionalLightDirection_w("Directional Light Direction", Vector) = (0, -1, 0, 0)
+        _DirectionalLightDirection_w("Directional Light Directional", Vector) = (0, -1, 0, 0)
         _DirectionalLightIntensity("Directional Light Intensity", Color) = (1, 1, 1, 1)
         _PuntualLightPosition_w("Puntual Light Position", Vector) = (0, 3, 0, 1)
         _PuntualLightIntensity("Puntual Light Intensity", Color) = (1, 1, 1, 1)
         _SpotLightPosition_w("Spot Light Position", Vector) = (0, 3, 0, 1)
-        _SpotLightDirection_w("Spot Light Direction", Vector) = (0, -1, 0, 0)
+        _SpotLightDirection_w("Spot Light Directional", Vector) = (0, -1, 0, 0)
         _SpotLightIntensity("Spot LightIntensity", Color) = (1, 1, 1, 1)
         _CircleRadius("Spot Light size", Range(0,1)) = 0.5
+
+        _NoiseScale("Noise Scale", Float) = 5.0
+        _NoiseIntensity("Noise Intensity", Range(0,1)) = 0.3
     }
 
     SubShader
@@ -26,8 +29,6 @@ Shader "Custom/ToonShader_Marble"
 
         Pass
         {
-            Tags { "LightMode" = "ForwardBase" }
-
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -47,7 +48,6 @@ Shader "Custom/ToonShader_Marble"
             };
 
             sampler2D _Maintex;
-            float4 _Maintex_ST;
             float4 _ShadeColor;
             float _Threshold;
             float4 _MaterialKd;
@@ -62,6 +62,9 @@ Shader "Custom/ToonShader_Marble"
             float4 _SpotLightIntensity;
             float _CircleRadius;
 
+            float _NoiseScale;
+            float _NoiseIntensity;
+
             float hash(float2 p) {
                 return frac(sin(dot(p, float2(127.1, 311.7))) * 43758.5453123);
             }
@@ -73,26 +76,26 @@ Shader "Custom/ToonShader_Marble"
                 float b = hash(i + float2(1.0, 0.0));
                 float c = hash(i + float2(0.0, 1.0));
                 float d = hash(i + float2(1.0, 1.0));
+
                 float2 u = f * f * (3.0 - 2.0 * f);
-                return lerp(lerp(a, b, u.x), lerp(c, d, u.x), u.y);
+
+                return lerp(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
             }
 
-            float marble(float2 uv, float t) {
-                float n = noise(uv * 10.0 + t);
-                return sin(uv.y * 10.0 + n * 4.0);
-            }
-
-            v2f vert(appdata v) {
+            v2f vert (appdata v)
+            {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _Maintex);
+                o.uv = v.uv;
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 return o;
             }
 
-            float3 ToonLighting(v2f i) {
+            float3 ToonLighting(v2f i)
+            {
                 float3 N = normalize(i.worldNormal);
+
                 float3 Ldir = normalize(-_DirectionalLightDirection_w.xyz);
                 float diffDir = max(0, dot(N, Ldir));
                 float3 directional = diffDir * _DirectionalLightIntensity.rgb;
@@ -109,12 +112,18 @@ Shader "Custom/ToonShader_Marble"
                     diffS = max(0, dot(N, Ls));
                 float3 spot = diffS * _SpotLightIntensity.rgb;
 
-                return _AmbientLight.rgb + directional + punctual + spot;
+                float3 ambient = _AmbientLight.rgb;
+
+                return ambient + directional + punctual + spot;
             }
 
-            fixed4 frag(v2f i) : SV_Target {
+            fixed4 frag (v2f i) : SV_Target
+            {
                 float3 totalLight = ToonLighting(i);
                 float lightIntensity = saturate(length(totalLight));
+
+                float n = noise(i.uv * _NoiseScale);
+                lightIntensity += (n - 0.5) * _NoiseIntensity;
 
                 float3 toonLevels = float3(0.3, 0.6, 0.9);
                 float3 toonShades = float3(0.2, 0.5, 1.0);
@@ -126,12 +135,10 @@ Shader "Custom/ToonShader_Marble"
                 float shadeFactor = lerp(toonShades.x, toonShades.y, s1);
                 shadeFactor = lerp(shadeFactor, toonShades.z, s2 * s3);
 
-                float m = marble(i.uv, _Time.y);
-                float3 marbleColor = lerp(float3(1, 0.7, 0.8), float3(0.5, 0.1, 0.2), m * 0.5 + 0.5);
-
                 fixed4 texColor = tex2D(_Maintex, i.uv) * _MaterialKd;
-                float3 combined = texColor.rgb * shadeFactor + marbleColor * 0.4;
-                return fixed4(combined, 1);
+                fixed4 finalColor = lerp(_ShadeColor, texColor, shadeFactor);
+
+                return finalColor;
             }
             ENDCG
         }
