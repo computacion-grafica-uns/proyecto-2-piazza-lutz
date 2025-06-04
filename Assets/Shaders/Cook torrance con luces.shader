@@ -50,6 +50,8 @@ Shader "Custom/Cook-Torrance_Fixed"
             };
 
             sampler2D _Maintex;
+            float4 _Maintex_ST;
+
             float4 _PuntualLightIntensity, _PuntualLightPosition_w;
             float4 _DirectionalLightIntensity, _DirectionalLightDirection_w;
             float4 _SpotLightIntensity, _SpotLightPosition_w, _SpotLightDirection_w;
@@ -64,7 +66,7 @@ Shader "Custom/Cook-Torrance_Fixed"
                 o.position = UnityObjectToClipPos(v.position);
                 o.position_w = mul(unity_ObjectToWorld, v.position);
                 o.normal_w = UnityObjectToWorldNormal(v.normal);
-                o.uv = v.uv;
+                o.uv = TRANSFORM_TEX(v.uv, _Maintex);
                 return o;
             }
 
