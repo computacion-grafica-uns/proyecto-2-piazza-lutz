@@ -66,7 +66,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _CircleRadius: 0.142
+    - _CircleRadius: 0.99
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -77,28 +77,23 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Roughness: 0.35
+    - _Roughness: 0.318
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-<<<<<<< HEAD:Assets/Materials/MaterialsB/Cook - Torrance - Plastico.mat
-    - _AmbientLight: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-    - _BaseColor: {r: 0.9, g: 0.05, b: 0.05, a: 1}
-=======
-    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CamaraPosition: {r: 0, g: 1, b: -10, a: 0}
->>>>>>> 36d64a997c24bfb90df0b39ae60683025e475c12:Assets/Materials/MaterialsB/cooktorrance luces globales prueba.mat
+    - _AmbientLight: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    - _BaseColor: {r: 0.052747007, g: 0.18730061, b: 0.7987421, a: 1}
+    - _CamaraPosition: {r: 245.62, g: 204.6, b: -343.3, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 11.784483, g: -6.720255, b: 14, a: 0}
-    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+    - _DirectionalLightDirection_w: {r: -10.7, g: -16.13, b: -7.92, a: 0}
+    - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PuntualLightPosition_w: {r: -0.15804657, g: 17.821169, b: 16.941193, a: 0}
-    - _SpotLightDirection_w: {r: 0, g: -72.48073, b: 1.5813491, a: 0}
+    - _PuntualLightIntensity: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+    - _PuntualLightPosition_w: {r: -0.4, g: 8.96, b: -9.73, a: 0}
+    - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightPosition_w: {r: -11.552688, g: 17.373915, b: 2.4135175, a: 0}
+    - _SpotLightPosition_w: {r: 0, g: 1.48, b: 0, a: 0}
   m_BuildTextureStacks: []

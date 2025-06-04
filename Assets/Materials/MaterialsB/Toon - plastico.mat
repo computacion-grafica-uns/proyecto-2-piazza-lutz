@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ward - Plastico
-  m_Shader: {fileID: 4800000, guid: 594b198d76f532f40894848c9125f79c, type: 3}
+  m_Name: Toon - plastico
+  m_Shader: {fileID: 4800000, guid: c52157e5a7e4bae4da02a65a79c72dba, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -65,10 +65,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaX: 0.3
-    - _AlphaY: 0.3
     - _BumpScale: 1
-    - _CircleRadius: 0.142
+    - _CircleRadius: 0.5
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -82,20 +80,20 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Threshold: 0.781
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _AmbientLight: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 11.784483, g: -6.720255, b: 14, a: 0}
-    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
+    - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.1, g: 0, b: 0, a: 1}
-    - _MaterialKd: {r: 0.8, g: 0.1, b: 0.1, a: 1}
-    - _MaterialKs: {r: 0.2, g: 0.05, b: 0.05, a: 1}
+    - _MaterialKd: {r: 0.0902851, g: 0.0902851, b: 0.52201253, a: 1}
     - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PuntualLightPosition_w: {r: -0.15804657, g: 17.821169, b: 16.941193, a: 0}
-    - _SpotLightDirection_w: {r: 0, g: -72.48073, b: 1.5813491, a: 0}
+    - _PuntualLightPosition_w: {r: 0, g: 3, b: 0, a: 1}
+    - _ShadeColor: {r: 0.027570084, g: 0.027570084, b: 0.21383637, a: 1}
+    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightPosition_w: {r: -11.552688, g: 17.373915, b: 2.4135175, a: 0}
+    - _SpotLightPosition_w: {r: 0, g: 3, b: 0, a: 1}
   m_BuildTextureStacks: []

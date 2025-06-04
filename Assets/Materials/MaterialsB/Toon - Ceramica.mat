@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blinn - Phong - Ceramica
-  m_Shader: {fileID: 4800000, guid: cd57c4cfc2059194e96cff04854647b7, type: 3}
+  m_Name: Toon - Ceramica
+  m_Shader: {fileID: 4800000, guid: c52157e5a7e4bae4da02a65a79c72dba, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -43,10 +43,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EmissionTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -69,46 +65,35 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Ambient: 0.1
     - _BumpScale: 1
-    - _CircleRadius: 0.99
+    - _CircleRadius: 0.87
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Diffuse: 1
     - _DstBlend: 0
-    - _EmiVal: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Material_n: 15
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Shininess: 0.1
     - _SmoothnessTextureChannel: 0
-    - _Spec: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Threshold: 0.57
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbColor: {r: 1, g: 1, b: 1, a: 1}
-    - _AmbientLight: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-    - _CamaraPosition: {r: 245.62, g: 204.6, b: -343.3, a: 0}
+    - _AmbientLight: {r: 0.18238991, g: 0.09888056, b: 0.025809867, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DifColor: {r: 0.6, g: 0.3, b: 0.1, a: 1}
-    - _DirectionalLightDirection_w: {r: -9.3, g: -33.69, b: 46.5, a: 0}
+    - _DirectionalLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _EmiColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaterialKa: {r: 0.25, g: 0.15, b: 0.1, a: 1}
-    - _MaterialKd: {r: 0.2924528, g: 0.078286305, b: 0.006897471, a: 1}
-    - _MaterialKs: {r: 0.05, g: 0.02, b: 0.02, a: 1}
-    - _PuntualLightIntensity: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
-    - _PuntualLightPosition_w: {r: -0.4, g: 8.96, b: -9.73, a: 0}
-    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpotLightDirection_w: {r: 0, g: -5, b: 0, a: 0}
+    - _MaterialKd: {r: 0.55, g: 0.27, b: 0.07, a: 1}
+    - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _PuntualLightPosition_w: {r: 0, g: 3, b: 0, a: 1}
+    - _ShadeColor: {r: 0.15723258, g: 0.059898123, b: 0, a: 1}
+    - _SpotLightDirection_w: {r: 0, g: -1, b: 0, a: 0}
     - _SpotLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _SpotLightPosition_w: {r: 0, g: 1.48, b: 0, a: 0}
+    - _SpotLightPosition_w: {r: 0, g: 3, b: 0, a: 1}
   m_BuildTextureStacks: []
