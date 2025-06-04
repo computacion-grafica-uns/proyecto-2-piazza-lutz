@@ -228,12 +228,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 0
-  orbitalTarget: {fileID: 0}
   switchCooldown: 0.5
   moveSpeed: 5
   lookSpeed: 2
-  orbitalDistance: 5
-  orbitalSpeed: 50
+  initialFirstPersonPosition: {x: 0, y: 1.7, z: -5}
+  initialFirstPersonRotation: {x: 10, y: 0, z: 0}
+  distance: 50
+  rotationSpeed: 2000
+  targets: []
 --- !u!1001 &1987499598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,35 +281,7 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
-      propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50b573110271d0f458448e1349ed2359, type: 3}
@@ -434,6 +408,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FocusTarget
       objectReference: {fileID: 0}
+    - target: {fileID: -4093539689660850987, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: -3917235386070639272, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -510,10 +488,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 24983bee20663bc49869ecd0bb9a66ed, type: 2}
+    - target: {fileID: -34545858549371026, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 428008828512371194, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3547c1ad8d97b9c448e49771eb9ccc1b, type: 2}
+    - target: {fileID: 447772202706846507, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 499860036799296507, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -550,6 +536,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3547c1ad8d97b9c448e49771eb9ccc1b, type: 2}
+    - target: {fileID: 1456404777019361689, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 1486675822742459685, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_TagString
       value: FocusTarget
@@ -608,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6096704264734175398, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_TagString
-      value: FocusTarget
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6229137341952144611, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -626,10 +616,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FocusTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 7099606950135457332, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 7177143676593360253, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bf7db99ca0e6c484889afe8563bbeb82, type: 2}
+    - target: {fileID: 7178478693477276236, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 7279338283174884965, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_TagString
       value: FocusTarget
@@ -638,6 +636,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7c37afaf49d6b0c4c968d7b20ebd19af, type: 2}
+    - target: {fileID: 7618769707553169471, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8004352705145552564, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -646,6 +648,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9788b7e4bcba5964aae7b411893f58fe, type: 2}
+    - target: {fileID: 8571365707137374205, guid: 50b573110271d0f458448e1349ed2359, type: 3}
+      propertyPath: m_TagString
+      value: FocusTarget
+      objectReference: {fileID: 0}
     - target: {fileID: 8667044968121218351, guid: 50b573110271d0f458448e1349ed2359, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

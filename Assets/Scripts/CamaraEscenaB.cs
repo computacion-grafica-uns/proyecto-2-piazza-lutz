@@ -1,6 +1,7 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CamaraEscenaB : MonoBehaviour
 {
@@ -8,28 +9,38 @@ public class CamaraEscenaB : MonoBehaviour
     public CameraMode currentMode = CameraMode.FirstPerson;
 
     [Header("General")]
-    public Transform orbitalTarget;      // Punto alrededor del cual orbita la cámara
-    public float switchCooldown = 0.5f;  // Previene cambio múltiple por frame
+    public float switchCooldown = 0.5f;  // Previene cambio mÃºltiple por frame
 
     [Header("First Person Settings")]
     public float moveSpeed = 5f;
     public float lookSpeed = 2f;
     private float yaw, pitch;
+    public Vector3 initialFirstPersonPosition = new Vector3(0f, 1.7f, -5f);
+    public Vector3 initialFirstPersonRotation = new Vector3(10f, 0f, 0f);
 
     [Header("Orbital Settings")]
-    public float orbitalDistance = 5f;
-    public float orbitalSpeed = 50f;
+    public float distance = 50f;
+    public float rotationSpeed = 2000f;
     private float orbitalYaw = 0f;
     private float orbitalPitch = 20f;
 
     private float switchTimer = 0f;
 
+    public Transform[] targets;
+    private int currentTargetIndex = 0;
+
     void Start()
     {
-        Vector3 angles = transform.eulerAngles;
-        yaw = angles.y;
-        pitch = angles.x;
         Cursor.lockState = CursorLockMode.Locked;
+        transform.position = initialFirstPersonPosition;
+        transform.eulerAngles = initialFirstPersonRotation;
+        yaw = initialFirstPersonRotation.y;
+        pitch = initialFirstPersonRotation.x;
+
+        targets = GameObject.FindGameObjectsWithTag("FocusTarget")
+            .OrderBy(obj => obj.name)
+            .Select(obj => obj.transform)
+            .ToArray();
     }
 
     void Update()
@@ -80,28 +91,51 @@ public class CamaraEscenaB : MonoBehaviour
 
     void UpdateOrbital()
     {
-        if (orbitalTarget == null) return;
+        if (targets.Length == 0) return;
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                currentTargetIndex = (currentTargetIndex - 1) % targets.Length;
+            }
+            else
+            {
+                currentTargetIndex = (currentTargetIndex + 1) % targets.Length;
+            }
 
-        // Mouse drag to orbit
+            Transform newTarget = targets[currentTargetIndex];
+            Vector3 toCamera = (transform.position - newTarget.position).normalized;
+            orbitalYaw = Mathf.Atan2(toCamera.x, toCamera.z) * Mathf.Rad2Deg;
+            orbitalPitch = Mathf.Asin(toCamera.y) * Mathf.Rad2Deg;
+        }
+
+        // Mouse orbita
         if (Input.GetMouseButton(1))
         {
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
 
-            orbitalYaw += mouseX * orbitalSpeed * Time.deltaTime;
-            orbitalPitch -= mouseY * orbitalSpeed * Time.deltaTime;
+            orbitalYaw += mouseX * rotationSpeed * Time.deltaTime;
+            orbitalPitch -= mouseY * rotationSpeed * Time.deltaTime;
             orbitalPitch = Mathf.Clamp(orbitalPitch, -85f, 85f);
         }
 
-        // Scroll to zoom
+        // Scroll zoom
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        orbitalDistance -= scroll * 5f;
-        orbitalDistance = Mathf.Clamp(orbitalDistance, 2f, 20f);
+        distance -= scroll * 5f;
+        distance = Mathf.Clamp(distance, 2f, 20f);
 
-        // Calcular posición orbital
-        Quaternion rotation = Quaternion.Euler(orbitalPitch, orbitalYaw, 0f);
-        Vector3 direction = rotation * Vector3.forward;
-        transform.position = orbitalTarget.position - direction * orbitalDistance;
-        transform.LookAt(orbitalTarget.position);
+        float radYaw = orbitalYaw * Mathf.Deg2Rad;
+        float radPitch = orbitalPitch * Mathf.Deg2Rad;
+
+        Vector3 direction = new Vector3(
+            Mathf.Sin(radYaw) * Mathf.Cos(radPitch),
+            Mathf.Sin(radPitch),
+            Mathf.Cos(radYaw) * Mathf.Cos(radPitch)
+        );
+
+        Vector3 offset = direction * distance;
+        transform.position = targets[currentTargetIndex].position + offset;
+        transform.LookAt(targets[currentTargetIndex]);
     }
 }
