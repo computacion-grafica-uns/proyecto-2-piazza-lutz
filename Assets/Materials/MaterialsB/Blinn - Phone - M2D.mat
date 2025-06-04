@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Blinn - Phone - M2D
-  m_Shader: {fileID: 4800000, guid: 594b198d76f532f40894848c9125f79c, type: 3}
+  m_Shader: {fileID: 4800000, guid: cd57c4cfc2059194e96cff04854647b7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -87,6 +87,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 1, g: 1, b: 1, a: 1}
+    - _CamaraPosition: {r: 90, g: 90, b: 90, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightDirection_w: {r: 11.784483, g: -6.720255, b: 14, a: 0}
     - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
