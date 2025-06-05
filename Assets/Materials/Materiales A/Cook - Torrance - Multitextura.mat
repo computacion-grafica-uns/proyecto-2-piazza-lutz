@@ -72,7 +72,7 @@ Material:
     - _Blend: 0.568
     - _Blending: -1.29
     - _BumpScale: 1
-    - _CircleRadius: 0
+    - _CircleRadius: 0.161
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -90,16 +90,16 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLight: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CamaraPosition: {r: 0.3167044, g: 174.46765, b: 249.50987, a: 0}
+    - _CamaraPosition: {r: 0.86089176, g: 6.420374, b: 29.798105, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DirectionalLightDirection_w: {r: 406.4524, g: 151.19684, b: 77.665886, a: 0}
-    - _DirectionalLightIntensity: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+    - _DirectionalLightDirection_w: {r: -0.41579634, g: -2.9407713, b: -3.9006634, a: 0}
+    - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PuntualLightPosition_w: {r: 199.27216, g: 266.62335, b: -435.80737, a: 0}
-    - _SpotLightDirection_w: {r: 0, g: 0, b: 0, a: 0}
-    - _SpotLightIntensity: {r: 0.12345992, g: 0.7169812, b: 0.0033819948, a: 1}
-    - _SpotLightPosition_w: {r: 0, g: 88.27806, b: -139.80312, a: 0}
+    - _PuntualLightIntensity: {r: 0.9528302, g: 0.8944019, b: 0.8944019, a: 1}
+    - _PuntualLightPosition_w: {r: 2.2280407, g: 11.784334, b: -7.8540998, a: 0}
+    - _SpotLightDirection_w: {r: 0.000000017896708, g: 0.9960791, b: -0.08895447, a: 0}
+    - _SpotLightIntensity: {r: 1, g: 0.34656844, b: 0, a: 1}
+    - _SpotLightPosition_w: {r: -10.058527, g: 8.353807, b: 0.1728121, a: 0}
   m_BuildTextureStacks: []
