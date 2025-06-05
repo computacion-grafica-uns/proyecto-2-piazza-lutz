@@ -2,7 +2,7 @@ Shader "Custom/Cook Torrance Multitextura"
 {
     Properties
     {
-        _Maintex("Texture", 2D) = "white" {}
+        _Maintex("Base", 2D) = "white" {}
         _Secondtex("Detalle",2d) = "white" {}
         _Blend("Blend", Range(0,1)) = 0.5
 
@@ -48,11 +48,16 @@ Shader "Custom/Cook Torrance Multitextura"
                     float4 position : SV_POSITION;
                     float4 position_w : TEXCOORD1;
                     float3 normal_w : TEXCOORD0;
-                    float2 uv : TEXCOORD2;
+                    float2 uv_Main : TEXCOORD2;
+                    float2 uv_Second : TEXCOORD3;
                 };
 
                 sampler2D _Maintex;
+                float4 _Maintex_ST;
+
                 sampler2D _Secondtex;
+                float4 _Secondtex_ST;
+
                 float _Blend;
                 float4 _PuntualLightIntensity, _PuntualLightPosition_w;
                 float4 _DirectionalLightIntensity, _DirectionalLightDirection_w;
@@ -68,7 +73,8 @@ Shader "Custom/Cook Torrance Multitextura"
                     o.position = UnityObjectToClipPos(v.position);
                     o.position_w = mul(unity_ObjectToWorld, v.position);
                     o.normal_w = UnityObjectToWorldNormal(v.normal);
-                    o.uv = v.uv;
+                    o.uv_Main = TRANSFORM_TEX(v.uv, _Maintex);
+                    o.uv_Second = TRANSFORM_TEX(v.uv, _Secondtex);
                     return o;
                 }
 
@@ -115,7 +121,7 @@ Shader "Custom/Cook Torrance Multitextura"
                     float3 F = FresnelSchlick(HdotV, F0);
                     float3 kD = (1.0 - F) * (1.0 - _Metallic);
 
-                    float NdotL = max(dot(N, L), 0.05); // piso mínimo
+                    float NdotL = max(dot(N, L), 0.05); // piso mï¿½nimo
 
                     float3 diffuse = kD * baseColor / UNITY_PI;
                     float3 specular = CookTorranceSpecular(N, V, L, _Roughness, F0);
@@ -126,8 +132,8 @@ Shader "Custom/Cook Torrance Multitextura"
                 fixed4 fragmentShader(v2f f) : SV_Target {
                     float3 N = normalize(f.normal_w);
                     float3 V = normalize(_CustomCameraPos.xyz - f.position_w.xyz);
-                    fixed4 tex1 = tex2D(_Maintex, f.uv);
-                    fixed4 tex2 = tex2D(_Secondtex, f.uv);
+                    fixed4 tex1 = tex2D(_Maintex, f.uv_Main);
+                    fixed4 tex2 = tex2D(_Secondtex, f.uv_Second);
                     float3 texBlended= lerp(tex1.rgb, tex2.rgb, _Blend) * 2;
                     float3 baseColor = texBlended * _BaseColor.rgb;
 

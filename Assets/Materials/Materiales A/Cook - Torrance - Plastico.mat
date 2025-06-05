@@ -29,4 +29,9 @@ Material:
     - _Roughness: 0.318
     m_Colors:
     - _BaseColor: {r: 0.052747007, g: 0.18730061, b: 0.7987421, a: 1}
+    - _CamaraPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
+    - _PuntualLightIntensity: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+    - _PuntualLightPosition_w: {r: -0.4, g: 250.33763, b: 162.96097, a: 0}
+    - _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

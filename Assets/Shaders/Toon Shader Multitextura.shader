@@ -5,7 +5,6 @@ Shader "Custom/Toon Shader Multitextura"
         _Maintex("Texture", 2D) = "white" {}
         _Secondtex("Textura", 2D) = "white" {}
         _ShadeColor("Shade Color", Color) = (0.1, 0.1, 0.1, 1)
-        _Threshold("Toon Threshold", Range(0,1)) = 0.5
 
         _MaterialKd("Material Kd (Base Color)", Color) = (1, 1, 1, 1)
 
@@ -44,16 +43,19 @@ Shader "Custom/Toon Shader Multitextura"
                 struct v2f
                 {
                     float4 pos : SV_POSITION;
-                    float2 uv : TEXCOORD0;
+                    float2 uv_Main : TEXCOORD0;
+                    float2 uv_Second : TEXCOORD3;
                     float3 worldNormal : TEXCOORD1;
                     float3 worldPos : TEXCOORD2;
                 };
 
                 sampler2D _Maintex;
-                sampler2D _Secondtex;
                 float4 _Maintex_ST;
+
+                sampler2D _Secondtex;
+                float4 _Secondtex_ST;
+                
                 float4 _ShadeColor;
-                float _Threshold;
                 float4 _MaterialKd;
 
                 float4 _AmbientLight;
@@ -70,7 +72,8 @@ Shader "Custom/Toon Shader Multitextura"
                 {
                     v2f o;
                     o.pos = UnityObjectToClipPos(v.vertex);
-                    o.uv = TRANSFORM_TEX(v.uv, _Maintex);
+                    o.uv_Main = TRANSFORM_TEX(v.uv, _Maintex);
+                    o.uv_Second = TRANSFORM_TEX(v.uv, _Secondtex);
                     o.worldNormal = UnityObjectToWorldNormal(v.normal);
                     o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                     return o;
@@ -103,26 +106,6 @@ Shader "Custom/Toon Shader Multitextura"
 
                 fixed4 frag(v2f i) : SV_Target
                 {
-                    /*float3 totalLight = ToonLighting(i);
-                    float lightIntensity = saturate(length(totalLight));
-
-                    // float shadeFactor = step(_Threshold, lightIntensity);
-                    // float shadeFactor = smoothstep(_Threshold - 0.1, _Threshold + 0.1, lightIntensity);
-
-                    float shadeFactor = 0.0;
-
-                    if (lightIntensity > 0.8)
-                        shadeFactor = 1.0;
-                    else if (lightIntensity > 0.5)
-                        shadeFactor = 0.7;
-                    else if (lightIntensity > 0.25)
-                        shadeFactor = 0.4;
-                    else
-                        shadeFactor = 0.15;
-
-                    fixed4 texColor = tex2D(_Maintex, i.uv) * _MaterialKd;
-                    fixed4 finalColor = lerp(_ShadeColor, texColor, shadeFactor);
-                    return finalColor;*/
 
                     float3 totalLight = ToonLighting(i);
                     float lightIntensity = saturate(length(totalLight));
@@ -140,7 +123,7 @@ Shader "Custom/Toon Shader Multitextura"
                     float shadeFactor = lerp(toonShades.x, toonShades.y, s1);
                     shadeFactor = lerp(shadeFactor, toonShades.z, s2 * s3);
 
-                    fixed4 texColor = (tex2D(_Maintex, i.uv) + tex2D(_Secondtex, i.uv)) * _MaterialKd;
+                    fixed4 texColor = (tex2D(_Maintex, i.uv_Main) + tex2D(_Secondtex, i.uv_Second)) * _MaterialKd;
                     fixed4 finalColor = lerp(_ShadeColor, texColor, shadeFactor);
 
                     return finalColor;

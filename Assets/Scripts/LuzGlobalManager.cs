@@ -21,11 +21,29 @@ public class LuzGlobalManager : MonoBehaviour
     [Range(0, 1)]
     public float _SpotLightCircleRadius = 0.25f;
 
+    [Header("Cámara orbital (asignar manualmente)")]
+    public Transform orbitalCameraTransform;
     public Vector3 camaraPosition;
     public Color _AmbientLight = Color.black;
 
     // List to hold all materials that need light synchronization
     public List<Material> materialsToSync = new List<Material>();
+
+    void Update()
+    {
+        if (orbitalCameraTransform != null)
+        {
+            camaraPosition = orbitalCameraTransform.position;
+
+            foreach (Material mat in materialsToSync)
+            {
+                if (mat != null && mat.HasProperty("_CamaraPosition"))
+                {
+                    mat.SetVector("_CamaraPosition", camaraPosition);
+                }
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -42,7 +60,7 @@ public class LuzGlobalManager : MonoBehaviour
     // This method updates the shader properties for all synced materials
     public void UpdateAllMaterials()
     {
-        camaraPosition = Camera.main != null ? Camera.main.transform.position : Vector3.zero;
+        camaraPosition = orbitalCameraTransform != null ? orbitalCameraTransform.position : Vector3.zero;
 
         foreach (Material mat in materialsToSync)
         {
