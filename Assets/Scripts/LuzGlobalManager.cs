@@ -7,11 +7,15 @@ public class LuzGlobalManager : MonoBehaviour
     [Header("Punctual Light")]
     public Color _PunctualLightIntensity = Color.black;
     public Vector3 _PunctualLightPosition = Vector3.zero;
+    private Color _puntualIntensityStored;
+    private bool _punctualOn = true;
 
     // --- Directional Light Properties ---
     [Header("Directional Light")]
     public Color _DirectionalLightIntensity = Color.black;
     public Vector3 _DirectionalLightDirection = Vector3.zero;
+    private Color _directionalIntensityStored;
+    private bool _directionalOn = true;
 
     // --- Spot Light Properties ---
     [Header("Spot Light")]
@@ -20,6 +24,8 @@ public class LuzGlobalManager : MonoBehaviour
     public Vector3 _SpotLightDirection = Vector3.zero;
     [Range(0, 1)]
     public float _SpotLightCircleRadius = 0.25f;
+    private Color _spotIntensityStored;
+    private bool _spotOn = true;
 
     [Header("Cámara orbital (asignar manualmente)")]
     public Transform orbitalCameraTransform;
@@ -42,6 +48,48 @@ public class LuzGlobalManager : MonoBehaviour
                     mat.SetVector("_CamaraPosition", camaraPosition);
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (_spotOn)
+            {
+                _spotIntensityStored = _SpotLightIntensity;
+                _SpotLightIntensity = Color.black;
+            }
+            else
+            {
+                _SpotLightIntensity = _spotIntensityStored;
+            }
+            _spotOn = !_spotOn;
+            UpdateAllMaterials();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (_directionalOn)
+            {
+                _directionalIntensityStored = _DirectionalLightIntensity;
+                _DirectionalLightIntensity = Color.black;
+            }
+            else
+            {
+                _DirectionalLightIntensity = _directionalIntensityStored;
+            }
+            _directionalOn = !_directionalOn;
+            UpdateAllMaterials();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (_punctualOn)
+            {
+                _puntualIntensityStored = _PunctualLightIntensity;
+                _PunctualLightIntensity = Color.black;
+            }
+            else
+            {
+                _PunctualLightIntensity = _puntualIntensityStored;
+            }
+            _punctualOn = !_punctualOn;
+            UpdateAllMaterials();
         }
     }
 
