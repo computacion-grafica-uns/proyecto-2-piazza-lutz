@@ -598,16 +598,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PunctualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-  _PunctualLightPosition: {x: -43635.8, y: -15772.924, z: -2883.566}
-  _DirectionalLightIntensity: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
-  _DirectionalLightDirection: {x: -5.77, y: 0, z: 0}
-  _SpotLightIntensity: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
-  _SpotLightPosition: {x: 0, y: 46.56891, z: -218.80643}
-  _SpotLightDirection: {x: 0, y: 0, z: 0}
-  _SpotLightCircleRadius: 0.25
+  _PunctualLightPosition: {x: 199.27216, y: 266.62335, z: -435.80737}
+  _DirectionalLightIntensity: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+  _DirectionalLightDirection: {x: 406.4524, y: 151.19684, z: 77.665886}
+  _SpotLightIntensity: {r: 0.12345992, g: 0.7169812, b: 0.0033819948, a: 1}
+  _SpotLightPosition: {x: 0, y: 88.27806, z: -139.80312}
+  _SpotLightDirection: {x: 0, y: -0, z: 0}
+  _SpotLightCircleRadius: 0
   orbitalCameraTransform: {fileID: 1957439111}
   camaraPosition: {x: 245.62, y: 232.6, z: -347.4}
-  _AmbientLight: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  _AmbientLight: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
   materialsToSync:
   - {fileID: 2100000, guid: 7c37afaf49d6b0c4c968d7b20ebd19af, type: 2}
   - {fileID: 2100000, guid: 3547c1ad8d97b9c448e49771eb9ccc1b, type: 2}

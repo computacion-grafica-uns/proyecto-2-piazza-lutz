@@ -29,19 +29,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CircleRadius: 0.25
+    - _CircleRadius: 0
     - _Material_n: 1.5
     m_Colors:
-    - _AmbientLight: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
-    - _CamaraPosition: {r: 245.62, g: 232.6, b: -347.4, a: 0}
-    - _DirectionalLightDirection_w: {r: -5.77, g: 0, b: 0, a: 0}
-    - _DirectionalLightIntensity: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
-    - _MaterialKa: {r: 0.18867922, g: 0.020215627, b: 0, a: 1}
-    - _MaterialKd: {r: 0.3962264, g: 0.094923705, b: 0.033641804, a: 1}
-    - _MaterialKs: {r: 0.3584906, g: 0.15055695, b: 0.08004032, a: 1}
+    - _AmbientLight: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+    - _CamaraPosition: {r: 0.3167044, g: 174.46765, b: 249.50987, a: 0}
+    - _DirectionalLightDirection_w: {r: 406.4524, g: 151.19684, b: 77.665886, a: 0}
+    - _DirectionalLightIntensity: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+    - _MaterialKa: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+    - _MaterialKd: {r: 0.3490566, g: 0.30909336, b: 0.3013083, a: 1}
+    - _MaterialKs: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PuntualLightPosition_w: {r: -43635.8, g: -15772.924, b: -2883.566, a: 0}
+    - _PuntualLightPosition_w: {r: 199.27216, g: 266.62335, b: -435.80737, a: 0}
     - _SpotLightDirection_w: {r: 0, g: 0, b: 0, a: 0}
-    - _SpotLightIntensity: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
-    - _SpotLightPosition_w: {r: 0, g: 46.56891, b: -218.80643, a: 0}
+    - _SpotLightIntensity: {r: 0.12345992, g: 0.7169812, b: 0.0033819948, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 88.27806, b: -139.80312, a: 0}
   m_BuildTextureStacks: []

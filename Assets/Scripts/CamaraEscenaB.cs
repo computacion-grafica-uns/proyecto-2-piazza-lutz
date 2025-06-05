@@ -12,14 +12,14 @@ public class CamaraEscenaB : MonoBehaviour
     public float switchCooldown = 0.5f;  // Previene cambio múltiple por frame
 
     [Header("First Person Settings")]
-    public float moveSpeed = 2.5f;
+    public float moveSpeed = 5f;
     public float lookSpeed = 2f;
     private float yaw, pitch;
-    public Vector3 initialFirstPersonPosition = new Vector3(0f, -400f, 0f);
+    public Vector3 initialFirstPersonPosition = new Vector3(0f, 10f, 2f);
     public Vector3 initialFirstPersonRotation = new Vector3(0f, 0f, 0f);
 
     [Header("Orbital Settings")]
-    public float distance = 75f;
+    public float distance = 20f;
     public float rotationSpeed = 2000f;
     private float orbitalYaw = 0f;
     private float orbitalPitch = 20f;
