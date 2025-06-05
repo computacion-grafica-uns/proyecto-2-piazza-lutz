@@ -25,16 +25,16 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _CircleRadius: 0.363
+    - _CircleRadius: 0.25
     - _Metallic: 0
     - _Roughness: 0.318
     m_Colors:
-    - _AmbientLight: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+    - _AmbientLight: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     - _BaseColor: {r: 0.052747007, g: 0.18730061, b: 0.7987421, a: 1}
-    - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _DirectionalLightIntensity: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
     - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-    - _PuntualLightPosition_w: {r: 72.85507, g: 6.2500353, b: 147.57477, a: 0}
-    - _SpotLightDirection_w: {r: 0, g: 1.3543804, b: 4.813211, a: 0}
-    - _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-    - _SpotLightPosition_w: {r: 0, g: 112.82005, b: -69.2023, a: 0}
+    - _PuntualLightPosition_w: {r: -43635.8, g: -15772.924, b: -2883.566, a: 0}
+    - _SpotLightDirection_w: {r: 0, g: 0, b: 0, a: 0}
+    - _SpotLightIntensity: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    - _SpotLightPosition_w: {r: 0, g: 46.56891, b: -218.80643, a: 0}
   m_BuildTextureStacks: []
