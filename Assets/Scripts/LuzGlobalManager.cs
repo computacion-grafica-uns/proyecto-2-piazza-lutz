@@ -7,11 +7,13 @@ public class LuzGlobalManager : MonoBehaviour
     [Header("Punctual Light")]
     public Color _PunctualLightIntensity = Color.black;
     public Vector3 _PunctualLightPosition = Vector3.zero;
+    private Color puntualColorAux;
 
     // --- Directional Light Properties ---
     [Header("Directional Light")]
     public Color _DirectionalLightIntensity = Color.black;
     public Vector3 _DirectionalLightDirection = Vector3.zero;
+    private Color directionalColorAux;
 
     // --- Spot Light Properties ---
     [Header("Spot Light")]
@@ -20,6 +22,7 @@ public class LuzGlobalManager : MonoBehaviour
     public Vector3 _SpotLightDirection = Vector3.zero;
     [Range(0, 1)]
     public float _SpotLightCircleRadius = 0.25f;
+    private Color spotColorAux;
 
     [Header("Cámara orbital (asignar manualmente)")]
     public Transform orbitalCameraTransform;
@@ -41,6 +44,19 @@ public class LuzGlobalManager : MonoBehaviour
                 {
                     mat.SetVector("_CamaraPosition", camaraPosition);
                 }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (spotColorAux == Color.black)
+            {
+                spotColorAux = _SpotLightIntensity;
+                _SpotLightIntensity = Color.black;
+            }
+            else
+            {
+                _SpotLightIntensity = spotColorAux;
+                spotColorAux = Color.black;
             }
         }
     }
