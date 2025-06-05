@@ -532,11 +532,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c0142597f3b084ca92cf83d4af3cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PunctualLightIntensity: {r: 0.9528302, g: 0.8944019, b: 0.8944019, a: 1}
+  _PunctualLightIntensity: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   _PunctualLightPosition: {x: 0.023154974, y: 2.9170563, z: 8.147686}
-  _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
+  _DirectionalLightIntensity: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   _DirectionalLightDirection: {x: -0.41579634, y: -2.1969743, z: -2.5260067}
-  _SpotLightIntensity: {r: 1, g: 0.34656844, b: 0, a: 1}
+  _SpotLightIntensity: {r: 0.99371064, g: 0.3429276, b: 0, a: 1}
   _SpotLightPosition: {x: -10.058527, y: 8.353807, z: 0.1728121}
   _SpotLightDirection: {x: 0.000000017896708, y: 0.9960791, z: -0.08895447}
   _SpotLightCircleRadius: 0.161
