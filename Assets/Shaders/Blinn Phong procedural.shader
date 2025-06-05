@@ -1,4 +1,4 @@
-Shader "Custom/BlinnPhong_OndasFull"
+Shader "Custom/Blinn Phong Procedural"
 {
     Properties
     {
@@ -21,6 +21,9 @@ Shader "Custom/BlinnPhong_OndasFull"
         _MaterialKd ("Material Kd", Color) = (1,1,1,1)
         _MaterialKs ("Material Ks", Color) = (0.5,0.5,0.5,1)
         _Material_n ("Shininess", float) = 32
+
+        // Posicion camara
+        _CamaraPosition("Camara orbital position", Vector) = (90,90,90)
     }
 
     SubShader
@@ -60,6 +63,8 @@ Shader "Custom/BlinnPhong_OndasFull"
 
             float4 _MaterialKa, _MaterialKd, _MaterialKs;
             float _Material_n;
+            
+            float4 _CustomCameraPos;
 
             v2f vert(appdata v)
             {
@@ -93,7 +98,7 @@ Shader "Custom/BlinnPhong_OndasFull"
             fixed4 frag(v2f i) : SV_Target
             {
                 float3 N = normalize(i.normal_w);
-                float3 V = normalize(_WorldSpaceCameraPos - i.pos_w.xyz);
+                float3 V = normalize(_CustomCameraPos - i.pos_w.xyz);
                 //fixed4 tex = tex2D(_Maintex, i.uv);
 
                 float3 color = float3(0,0,0);
@@ -111,7 +116,7 @@ Shader "Custom/BlinnPhong_OndasFull"
 
                 // Ondas animadas procedurales
                 float t = cos(i.uv.y * TAU * 2) * 0.5 + 1.0;
-                float offset = cos((_Time.y + i.uv.y * t) * TAU * 0.5) * 0.5 + 0.5;
+                float offset = cos((_Time.y + i.uv.y ) * TAU * 0.5) * 0.5 + 0.5;
                 offset = saturate(offset);
 
                 //float3 finalColor = color * tex.rgb;

@@ -1,4 +1,4 @@
-Shader "Custom/BlingPhong Luces"
+Shader "Custom/Blinn Phong Luces"
 {
     Properties
     {

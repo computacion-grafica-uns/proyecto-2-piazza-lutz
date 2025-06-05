@@ -20,6 +20,8 @@ Shader "Custom/CookTorrance_Ondas"
         _BaseColor("Base Color", Color) = (1,0,0,1)
         _Metallic("Metallic", Range(0,1)) = 0.0
         _Roughness("Roughness", Range(0.05,1)) = 0.3
+
+        _CamaraPosition("Camara orbital position", Vector) = (90,90,90)
     }
 
     SubShader
@@ -56,6 +58,7 @@ Shader "Custom/CookTorrance_Ondas"
             float4 _AmbientLight;
             float4 _BaseColor;
             float _Metallic, _Roughness;
+            float4 _CustomCameraPos;
 
             v2f vertexShader(vertexData v) {
                 v2f o;
@@ -112,7 +115,7 @@ Shader "Custom/CookTorrance_Ondas"
 
             fixed4 fragmentShader(v2f f) : SV_Target {
                 float3 N = normalize(f.normal_w);
-                float3 V = normalize(_WorldSpaceCameraPos - f.position_w.xyz);
+                float3 V = normalize(_CustomCameraPos - f.position_w.xyz);
                 float3 texColor = tex2D(_Maintex, f.uv).rgb;
 
                 float3 color = _AmbientLight.rgb * _BaseColor.rgb;
