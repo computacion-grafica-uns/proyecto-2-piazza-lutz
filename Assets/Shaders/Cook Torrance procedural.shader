@@ -1,4 +1,4 @@
-Shader "Custom/CookTorrance_Ondas"
+Shader "Custom/Cook Torrance Procedural"
 {
     Properties
     {
