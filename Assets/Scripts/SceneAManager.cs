@@ -47,7 +47,12 @@ public class SceneAManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                currentTargetIndex = (currentTargetIndex - 1) % targets.Length;
+                if (currentTargetIndex == 0)
+                {
+                    currentTargetIndex = targets.Length - 1;
+                }
+                else
+                    currentTargetIndex = (currentTargetIndex - 1) % targets.Length;
             }
             else
             {
