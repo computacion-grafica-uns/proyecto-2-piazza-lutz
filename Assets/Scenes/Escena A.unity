@@ -2279,55 +2279,6 @@ MonoBehaviour:
   zoomSpeed: 100
   minDistance: 50
   maxDistance: 500
-<<<<<<< HEAD
-=======
---- !u!114 &1957439113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957439108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c0142597f3b084ca92cf83d4af3cc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _PunctualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-  _PunctualLightPosition: {x: 72.85507, y: 6.2500353, z: 147.57477}
-  _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-  _DirectionalLightDirection: {x: -22.703232, y: -16.130005, z: -12.792297}
-  _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-  _SpotLightPosition: {x: 0, y: 112.82005, z: -69.2023}
-  _SpotLightDirection: {x: 0, y: 1.3543804, z: 4.813211}
-  _SpotLightCircleRadius: 0.363
-  camaraPosition: {x: 245.62, y: 232.6, z: -347.4}
-  _AmbientLight: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
-  materialsToSync:
-  - {fileID: 2100000, guid: 3547c1ad8d97b9c448e49771eb9ccc1b, type: 2}
-  - {fileID: 2100000, guid: bf7db99ca0e6c484889afe8563bbeb82, type: 2}
-  - {fileID: 2100000, guid: 5595ad48f858ee846b47ecd11976abe2, type: 2}
-  - {fileID: 2100000, guid: 7c37afaf49d6b0c4c968d7b20ebd19af, type: 2}
-  - {fileID: 2100000, guid: 7548da0277350674fb3de84f70a76c2e, type: 2}
-  - {fileID: 2100000, guid: 2d47d63ff0718574f97a31dbe22fbced, type: 2}
-  - {fileID: 2100000, guid: 608b0668bdd9bcb4da32e17f5a579d2b, type: 2}
-  - {fileID: 2100000, guid: 9788b7e4bcba5964aae7b411893f58fe, type: 2}
-  - {fileID: 2100000, guid: 57d4a377715a1304a9a8e91b0685b8f5, type: 2}
-  - {fileID: 2100000, guid: 1e093581180eab8419b414fcec26d2d1, type: 2}
-  - {fileID: 2100000, guid: 24983bee20663bc49869ecd0bb9a66ed, type: 2}
-  - {fileID: 2100000, guid: 6373ebfbe781fba48a40959d67fbdc47, type: 2}
-  - {fileID: 2100000, guid: 7206a2f56b53f334484cf77585df2095, type: 2}
-  - {fileID: 2100000, guid: e1136eb9d9b5fb64ab43c2db0a240b48, type: 2}
-  - {fileID: 2100000, guid: 264459ef73fcb4b4ebd3269be441505f, type: 2}
-  - {fileID: 2100000, guid: 2bc5d8db83776684abccab6fb843eb6c, type: 2}
-  - {fileID: 2100000, guid: 0b4c9c65013570c4280795477ff924a0, type: 2}
-  - {fileID: 2100000, guid: 77af442519ccb56419eee5946ae53a86, type: 2}
-  - {fileID: 2100000, guid: 1966e1e8b2c42c94ba6de3a46d1c79e8, type: 2}
-  - {fileID: 2100000, guid: 0121daa0b711c4e4dbd587fe77c6269c, type: 2}
-  - {fileID: 2100000, guid: 105fb71c1c3a35e43adbba71aae28921, type: 2}
-  - {fileID: 2100000, guid: 6b47fc2b31b893b46bfbf9fde04623e7, type: 2}
-  - {fileID: 2100000, guid: 36723f57ac009884c9ed2c050be59941, type: 2}
->>>>>>> f29bd0487337b22f27e562f26b347298492c3a2c
 --- !u!1001 &1997869857
 PrefabInstance:
   m_ObjectHideFlags: 0

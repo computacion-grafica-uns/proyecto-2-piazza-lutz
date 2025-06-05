@@ -31,18 +31,10 @@ Material:
     m_Colors:
     - _AmbientLight: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
     - _BaseColor: {r: 0.052747007, g: 0.18730061, b: 0.7987421, a: 1}
-<<<<<<< HEAD
-    - _CamaraPosition: {r: 0, g: 0, b: 0, a: 0}
-    - _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-    - _PuntualLightIntensity: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    - _PuntualLightPosition_w: {r: -0.4, g: 250.33763, b: 162.96097, a: 0}
-    - _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-=======
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _PuntualLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _PuntualLightPosition_w: {r: 72.85507, g: 6.2500353, b: 147.57477, a: 0}
     - _SpotLightDirection_w: {r: 0, g: 1.3543804, b: 4.813211, a: 0}
     - _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
     - _SpotLightPosition_w: {r: 0, g: 112.82005, b: -69.2023, a: 0}
->>>>>>> f29bd0487337b22f27e562f26b347298492c3a2c
   m_BuildTextureStacks: []
