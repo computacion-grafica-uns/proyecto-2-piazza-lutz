@@ -94,11 +94,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbColor: {r: 0.8941177, g: 0.03137255, b: 0.03137255, a: 1}
-    - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
-    - _CamaraPosition: {r: 15.4755535, g: 10, b: 13.642681, a: 0}
+    - _AmbientLight: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    - _CamaraPosition: {r: 4.693732, g: 10, b: 17.149519, a: 0}
     - _Color: {r: 0.8930817, g: 0.03089266, b: 0.03089266, a: 1}
     - _DifColor: {r: 0.78616345, g: 0.08652733, b: 0.08652733, a: 1}
-    - _DirectionalLightDirection_w: {r: -0.41579634, g: -2.9407713, b: -3.9006634, a: 0}
+    - _DirectionalLightDirection_w: {r: -0.41579634, g: -2.1969743, b: -2.5260067, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
     - _EmiColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -106,7 +106,7 @@ Material:
     - _MaterialKd: {r: 0.27058825, g: 0.007843136, b: 0.23575605, a: 1}
     - _MaterialKs: {r: 0.25194117, g: 0.23429155, b: 0.3679245, a: 1}
     - _PuntualLightIntensity: {r: 0.9528302, g: 0.8944019, b: 0.8944019, a: 1}
-    - _PuntualLightPosition_w: {r: 2.2280407, g: 11.784334, b: -7.8540998, a: 0}
+    - _PuntualLightPosition_w: {r: 0.023154974, g: 2.9170563, b: 8.147686, a: 0}
     - _SpecColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _SpotLightDirection_w: {r: 0.000000017896708, g: 0.9960791, b: -0.08895447, a: 0}
     - _SpotLightIntensity: {r: 1, g: 0.34656844, b: 0, a: 1}

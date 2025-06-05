@@ -533,16 +533,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PunctualLightIntensity: {r: 0.9528302, g: 0.8944019, b: 0.8944019, a: 1}
-  _PunctualLightPosition: {x: 2.2280407, y: 11.784334, z: -7.8540998}
+  _PunctualLightPosition: {x: 0.023154974, y: 2.9170563, z: 8.147686}
   _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}
-  _DirectionalLightDirection: {x: -0.41579634, y: -2.9407713, z: -3.9006634}
+  _DirectionalLightDirection: {x: -0.41579634, y: -2.1969743, z: -2.5260067}
   _SpotLightIntensity: {r: 1, g: 0.34656844, b: 0, a: 1}
   _SpotLightPosition: {x: -10.058527, y: 8.353807, z: 0.1728121}
   _SpotLightDirection: {x: 0.000000017896708, y: 0.9960791, z: -0.08895447}
   _SpotLightCircleRadius: 0.161
   orbitalCameraTransform: {fileID: 440709447}
-  camaraPosition: {x: -59, y: 27.5, z: 51.8}
-  _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
+  camaraPosition: {x: 0.029999463, y: 28.9, z: -3.31}
+  _AmbientLight: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
   materialsToSync:
   - {fileID: 2100000, guid: 7c37afaf49d6b0c4c968d7b20ebd19af, type: 2}
   - {fileID: 2100000, guid: 3547c1ad8d97b9c448e49771eb9ccc1b, type: 2}
@@ -589,7 +589,7 @@ Transform:
   m_GameObject: {fileID: 617728150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: 6.76, z: 18.58}
+  m_LocalPosition: {x: 0.57, y: 6.76, z: 18.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
