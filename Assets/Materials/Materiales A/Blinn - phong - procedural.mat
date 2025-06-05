@@ -85,7 +85,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
-    - _CamaraPosition: {r: 245.62, g: 232.6, b: -347.4, a: 0}
+    - _CamaraPosition: {r: 15.4755535, g: 10, b: 13.642681, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DirectionalLightDirection_w: {r: -0.41579634, g: -2.9407713, b: -3.9006634, a: 0}
     - _DirectionalLightIntensity: {r: 1, g: 1, b: 1, a: 1}

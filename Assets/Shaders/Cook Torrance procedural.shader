@@ -131,7 +131,7 @@ Shader "Custom/Cook Torrance Procedural"
                 float spotAtt = dot(Ls, spotDir) > 1.0 - _CircleRadius ? 1.0 : 0.0;
                 color += computeLight(N, V, Ls, _SpotLightIntensity.rgb, texColor) * spotAtt;
 
-                // ▓▓ Efecto de onda sobre otro color (azul complementario, por ejemplo) ▓▓
+                // Efecto de onda sobre otro color (azul complementario)
                 float wave = cos((_Time.y + f.uv.x * 3.0) * TAU * 0.25) * 0.5 + 0.5;
                 float3 overlayColor = float3(0.2, 0.5, 1.0); // Azul cielo
                 color = lerp(color, overlayColor, wave * 0.4); // Mezcla parcial con la onda
