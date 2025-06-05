@@ -579,7 +579,7 @@ Transform:
   m_GameObject: {fileID: 484006124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -392, y: 114, z: -77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -598,11 +598,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PunctualLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-  _PunctualLightPosition: {x: 0, y: 0, z: 0}
+  _PunctualLightPosition: {x: -43635.8, y: -15772.924, z: -2883.566}
   _DirectionalLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-  _DirectionalLightDirection: {x: 0, y: 0, z: 0}
+  _DirectionalLightDirection: {x: -5.77, y: 0, z: 0}
   _SpotLightIntensity: {r: 0, g: 0, b: 0, a: 1}
-  _SpotLightPosition: {x: 0, y: 0, z: 0}
+  _SpotLightPosition: {x: 0, y: 46.56891, z: -218.80643}
   _SpotLightDirection: {x: 0, y: 0, z: 0}
   _SpotLightCircleRadius: 0.25
   orbitalCameraTransform: {fileID: 1957439111}
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   _SpotLightCircleRadius: 0
   orbitalCameraTransform: {fileID: 0}
   camaraPosition: {x: 0, y: 0, z: 0}
-  _AmbientLight: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+  _AmbientLight: {r: 0, g: 0, b: 0, a: 1}
   materialsToSync: []
 --- !u!1 &1705880024
 GameObject:

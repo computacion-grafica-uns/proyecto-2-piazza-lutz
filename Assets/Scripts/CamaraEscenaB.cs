@@ -15,11 +15,11 @@ public class CamaraEscenaB : MonoBehaviour
     public float moveSpeed = 5f;
     public float lookSpeed = 2f;
     private float yaw, pitch;
-    public Vector3 initialFirstPersonPosition = new Vector3(0f, 1.7f, -5f);
+    public Vector3 initialFirstPersonPosition = new Vector3(0f, 10f, -5f);
     public Vector3 initialFirstPersonRotation = new Vector3(10f, 0f, 0f);
 
     [Header("Orbital Settings")]
-    public float distance = 50f;
+    public float distance = 75f;
     public float rotationSpeed = 2000f;
     private float orbitalYaw = 0f;
     private float orbitalPitch = 20f;

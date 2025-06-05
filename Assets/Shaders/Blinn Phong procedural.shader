@@ -2,7 +2,7 @@ Shader "Custom/BlinnPhong_OndasFull"
 {
     Properties
     {
-        [NoScaleOffset] _Maintex("Texture",2D) = "white" {}
+        //[NoScaleOffset] _Maintex("Texture",2D) = "white" {}
 
         _DirectionalLightIntensity("Directional Light Intensity", Color) = (1,1,1,1)
         _DirectionalLightDirection_w("Directional Light Direction", Vector) = (0, -1, 0, 0)
@@ -67,7 +67,8 @@ Shader "Custom/BlinnPhong_OndasFull"
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.pos_w = mul(unity_ObjectToWorld, v.vertex);
                 o.normal_w = UnityObjectToWorldNormal(v.normal);
-                o.uv = TRANSFORM_TEX(v.uv, _Maintex);
+                //o.uv = TRANSFORM_TEX(v.uv, _Maintex);
+                o.uv = v.uv;
                 return o;
             }
 
@@ -93,7 +94,7 @@ Shader "Custom/BlinnPhong_OndasFull"
             {
                 float3 N = normalize(i.normal_w);
                 float3 V = normalize(_WorldSpaceCameraPos - i.pos_w.xyz);
-                fixed4 tex = tex2D(_Maintex, i.uv);
+                //fixed4 tex = tex2D(_Maintex, i.uv);
 
                 float3 color = float3(0,0,0);
 
@@ -113,7 +114,8 @@ Shader "Custom/BlinnPhong_OndasFull"
                 float offset = cos((_Time.y + i.uv.y * t) * TAU * 0.5) * 0.5 + 0.5;
                 offset = saturate(offset);
 
-                float3 finalColor = color * tex.rgb;
+                //float3 finalColor = color * tex.rgb;
+                float3 finalColor = color;
 
                 // Aplicamos la onda sobre R/G/B de forma estética
                 finalColor.r *= offset;

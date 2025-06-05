@@ -2,24 +2,26 @@ Shader "Custom/ToonShader_LucesCompatible_Perlin"
 {
     Properties
     {
-        _Maintex("Texture", 2D) = "white" {}
+        //_Maintex("Texture", 2D) = "white" {}
+
+        _MaterialKd("Color material", Color) = (1, 1, 1, 1)
         _ShadeColor("Shade Color", Color) = (0.1, 0.1, 0.1, 1)
-        _Threshold("Toon Threshold", Range(0,1)) = 0.5
 
-        _MaterialKd("Material Kd (Base Color)", Color) = (1, 1, 1, 1)
+        _NoiseScale("Noise Scale", Float) = 5.0
+        _NoiseIntensity("Noise Intensity", Range(0,1)) = 0.3
 
-        _AmbientLight("Ambient Light", Color) = (0.1, 0.1, 0.1, 1)
         _DirectionalLightDirection_w("Directional Light Directional", Vector) = (0, -1, 0, 0)
         _DirectionalLightIntensity("Directional Light Intensity", Color) = (1, 1, 1, 1)
+
         _PuntualLightPosition_w("Puntual Light Position", Vector) = (0, 3, 0, 1)
         _PuntualLightIntensity("Puntual Light Intensity", Color) = (1, 1, 1, 1)
+
         _SpotLightPosition_w("Spot Light Position", Vector) = (0, 3, 0, 1)
         _SpotLightDirection_w("Spot Light Directional", Vector) = (0, -1, 0, 0)
         _SpotLightIntensity("Spot LightIntensity", Color) = (1, 1, 1, 1)
         _CircleRadius("Spot Light size", Range(0,1)) = 0.5
 
-        _NoiseScale("Noise Scale", Float) = 5.0
-        _NoiseIntensity("Noise Intensity", Range(0,1)) = 0.3
+        _AmbientLight("Ambient Light", Color) = (0.1, 0.1, 0.1, 1)
     }
 
     SubShader
@@ -49,7 +51,6 @@ Shader "Custom/ToonShader_LucesCompatible_Perlin"
 
             sampler2D _Maintex;
             float4 _ShadeColor;
-            float _Threshold;
             float4 _MaterialKd;
 
             float4 _AmbientLight;
@@ -136,7 +137,8 @@ Shader "Custom/ToonShader_LucesCompatible_Perlin"
                 shadeFactor = lerp(shadeFactor, toonShades.z, s2 * s3);
 
                 fixed4 texColor = tex2D(_Maintex, i.uv) * _MaterialKd;
-                fixed4 finalColor = lerp(_ShadeColor, texColor, shadeFactor);
+                //fixed4 finalColor = lerp(_ShadeColor, texColor, shadeFactor);
+                fixed4 finalColor = shadeFactor * _ShadeColor;
 
                 return finalColor;
             }

@@ -4,19 +4,22 @@ Shader "Custom/Toon Shader Multitextura"
     {
         _Maintex("Texture", 2D) = "white" {}
         _Secondtex("Textura", 2D) = "white" {}
+
+        _MaterialKd("Color base", Color) = (1, 1, 1, 1)
         _ShadeColor("Shade Color", Color) = (0.1, 0.1, 0.1, 1)
 
-        _MaterialKd("Material Kd (Base Color)", Color) = (1, 1, 1, 1)
-
-        _AmbientLight("Ambient Light", Color) = (0.1, 0.1, 0.1, 1)
         _DirectionalLightDirection_w("Directional Light Directional", Vector) = (0, -1, 0, 0)
         _DirectionalLightIntensity("Directional Light Intensity", Color) = (1, 1, 1, 1)
+
         _PuntualLightPosition_w("Puntual Light Position", Vector) = (0, 3, 0, 1)
         _PuntualLightIntensity("Puntual Light Intensity", Color) = (1, 1, 1, 1)
+
         _SpotLightPosition_w("Spot Light Position", Vector) = (0, 3, 0, 1)
         _SpotLightDirection_w("Spot Light Directional", Vector) = (0, -1, 0, 0)
         _SpotLightIntensity("Spot LightIntensity", Color) = (1, 1, 1, 1)
         _CircleRadius("Spot Light size", Range(0,1)) = 0.5
+
+        _AmbientLight("Ambient Light", Color) = (0.1, 0.1, 0.1, 1)
     }
 
         SubShader
