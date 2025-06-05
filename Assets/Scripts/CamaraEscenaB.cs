@@ -12,11 +12,11 @@ public class CamaraEscenaB : MonoBehaviour
     public float switchCooldown = 0.5f;  // Previene cambio múltiple por frame
 
     [Header("First Person Settings")]
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2.5f;
     public float lookSpeed = 2f;
     private float yaw, pitch;
-    public Vector3 initialFirstPersonPosition = new Vector3(0f, 10f, -5f);
-    public Vector3 initialFirstPersonRotation = new Vector3(10f, 0f, 0f);
+    public Vector3 initialFirstPersonPosition = new Vector3(0f, -400f, 0f);
+    public Vector3 initialFirstPersonRotation = new Vector3(0f, 0f, 0f);
 
     [Header("Orbital Settings")]
     public float distance = 75f;
@@ -28,6 +28,7 @@ public class CamaraEscenaB : MonoBehaviour
 
     public Transform[] targets;
     private int currentTargetIndex = 0;
+    private float fixedY;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class CamaraEscenaB : MonoBehaviour
         transform.eulerAngles = initialFirstPersonRotation;
         yaw = initialFirstPersonRotation.y;
         pitch = initialFirstPersonRotation.x;
+        fixedY = initialFirstPersonPosition.y;
 
         targets = GameObject.FindGameObjectsWithTag("FocusTarget")
             .OrderBy(obj => obj.name)
@@ -86,7 +88,11 @@ public class CamaraEscenaB : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) move -= right;
         if (Input.GetKey(KeyCode.D)) move += right;
 
-        transform.position += move.normalized * moveSpeed * Time.deltaTime;
+        Vector3 newPos = transform.position + move.normalized * moveSpeed * Time.deltaTime;
+        newPos.y = fixedY;
+
+        transform.position = newPos;
+        
     }
 
     void UpdateOrbital()
