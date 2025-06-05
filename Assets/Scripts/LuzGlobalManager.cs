@@ -49,7 +49,7 @@ public class LuzGlobalManager : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             if (_spotOn)
             {
@@ -63,7 +63,7 @@ public class LuzGlobalManager : MonoBehaviour
             _spotOn = !_spotOn;
             UpdateAllMaterials();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             if (_directionalOn)
             {
@@ -77,7 +77,7 @@ public class LuzGlobalManager : MonoBehaviour
             _directionalOn = !_directionalOn;
             UpdateAllMaterials();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (_punctualOn)
             {

@@ -83,10 +83,10 @@ public class CamaraEscenaB : MonoBehaviour
         Vector3 right = transform.right;
         Vector3 move = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W)) move += forward;
-        if (Input.GetKey(KeyCode.S)) move -= forward;
-        if (Input.GetKey(KeyCode.A)) move -= right;
-        if (Input.GetKey(KeyCode.D)) move += right;
+        if (Input.GetKey(KeyCode.UpArrow)) move += forward;
+        if (Input.GetKey(KeyCode.DownArrow)) move -= forward;
+        if (Input.GetKey(KeyCode.LeftArrow)) move -= right;
+        if (Input.GetKey(KeyCode.RightArrow)) move += right;
 
         Vector3 newPos = transform.position + move.normalized * moveSpeed * Time.deltaTime;
         newPos.y = fixedY;
