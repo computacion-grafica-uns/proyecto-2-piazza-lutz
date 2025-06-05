@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement; // Necesario para la gestion de escenas
 
 public class CambioEscenas : MonoBehaviour
 {
-    public static int numeroEscena = 0;
+    public static int numeroEscena = -1;
 
     void Start()
     {
-        
+        if (numeroEscena == -1)
+        {
+            numeroEscena = 0;
+            CambiarEscena(numeroEscena);
+        }
     }
 
     void Update()
